@@ -1,0 +1,51 @@
+# Сгенерировано scripts/emit-redirects.mjs из redirects.json — руками не править.
+# Формат понимают Cloudflare Pages и Netlify. Это настоящие HTTP 301.
+# На хостинге, который этот файл игнорирует, срабатывают HTML-заглушки
+# с meta refresh, выпущенные тем же скриптом.
+
+/documents/dogovor-arendy  /dlya-zakupok/  301
+/documents/dogovor-arendy/  /dlya-zakupok/  301
+/documents/akt-vypolnennyh-rabot  /dlya-zakupok/priemka-i-oplata/  301
+/documents/akt-vypolnennyh-rabot/  /dlya-zakupok/priemka-i-oplata/  301
+/documents/dokumenty-na-tehniku-i-operatora  /documents/  301
+/documents/dokumenty-na-tehniku-i-operatora/  /documents/  301
+/blog/attestaciya-kranovshchika  /dlya-zakupok/  301
+/blog/attestaciya-kranovshchika/  /dlya-zakupok/  301
+/blog/ekspertiza-promyshlennoy-bezopasnosti  /documents/  301
+/blog/ekspertiza-promyshlennoy-bezopasnosti/  /documents/  301
+/blog/rabota-krana-ryadom-s-lep  /obekty/promzona/  301
+/blog/rabota-krana-ryadom-s-lep/  /obekty/promzona/  301
+/blog/ogranichitel-gruzopodemnosti  /park/  301
+/blog/ogranichitel-gruzopodemnosti/  /park/  301
+/blog/otvetstvennost-pri-incidente  /dlya-zakupok/  301
+/blog/otvetstvennost-pri-incidente/  /dlya-zakupok/  301
+/blog/razvodnye-mosty-logistika  /obekty/  301
+/blog/razvodnye-mosty-logistika/  /obekty/  301
+/blog/rabota-ryadom-s-pamyatnikom-kgiop  /obekty/obekt-pod-ohranoy-kgiop/  301
+/blog/rabota-ryadom-s-pamyatnikom-kgiop/  /obekty/obekt-pod-ohranoy-kgiop/  301
+/blog  /obekty/  301
+/blog/  /obekty/  301
+/keysy/podacha-na-terminal-porta  /obekty/port-i-terminal/  301
+/keysy/podacha-na-terminal-porta/  /obekty/port-i-terminal/  301
+/keysy/montazh-na-namyvnoy-territorii  /obekty/namyvnaya-territoriya/  301
+/keysy/montazh-na-namyvnoy-territorii/  /obekty/namyvnaya-territoriya/  301
+/keysy/montazh-tyazhelogo-oborudovaniya-100t  /obekty/promzona/  301
+/keysy/montazh-tyazhelogo-oborudovaniya-100t/  /obekty/promzona/  301
+/keysy/nochnoy-vyezd-cherez-most  /obekty/  301
+/keysy/nochnoy-vyezd-cherez-most/  /obekty/  301
+/keysy  /obekty/  301
+/keysy/  /obekty/  301
+/uslugi/kran-dlya-porta-i-promzony/petrodvortsovyy  /geo/petrodvortsovyy/  301
+/uslugi/kran-dlya-porta-i-promzony/petrodvortsovyy/  /geo/petrodvortsovyy/  301
+/uslugi/kran-dlya-porta-i-promzony/moskovskiy  /geo/moskovskiy/  301
+/uslugi/kran-dlya-porta-i-promzony/moskovskiy/  /geo/moskovskiy/  301
+/uslugi/arenda-avtokrana-25-60-tonn/pushkinskiy  /geo/pushkinskiy/  301
+/uslugi/arenda-avtokrana-25-60-tonn/pushkinskiy/  /geo/pushkinskiy/  301
+/uslugi/kran-dlya-porta-i-promzony  /obekty/port-i-terminal/  301
+/uslugi/kran-dlya-porta-i-promzony/  /obekty/port-i-terminal/  301
+/uslugi/arenda-avtokrana-25-60-tonn  /obekty/  301
+/uslugi/arenda-avtokrana-25-60-tonn/  /obekty/  301
+/uslugi  /obekty/  301
+/uslugi/  /obekty/  301
+/park/ivanovets-ks-8973  /park/liebherr-ltm-1130/  301
+/park/ivanovets-ks-8973/  /park/liebherr-ltm-1130/  301
