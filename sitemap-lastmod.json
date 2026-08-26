@@ -2,184 +2,184 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "dff9c7409300a87e",
-      "lastmod": "2026-08-26T15:14:39+03:00"
+      "hash": "fb5b7344b5bd3cb0",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/": {
-      "hash": "92610fe58b740e81",
-      "lastmod": "2026-08-26T14:21:34+03:00"
+      "hash": "c32793401d48018c",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/izmenenie-obema-i-tseny-kontrakta/": {
-      "hash": "76d5d618313e467a",
-      "lastmod": "2026-08-26T05:51:21+03:00"
+      "hash": "18a9f22ac098f495",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/malye-zakupki/": {
-      "hash": "6aec0fabf27134ce",
-      "lastmod": "2026-08-26T05:51:21+03:00"
+      "hash": "31c18ca39c3d339b",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/obespechenie-zayavki-i-kontrakta/": {
-      "hash": "0ac7a16affd9f180",
-      "lastmod": "2026-08-26T05:51:21+03:00"
+      "hash": "453994dfebf8d53b",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/priemka-i-oplata/": {
-      "hash": "51401f713ff8058d",
-      "lastmod": "2026-08-26T05:51:21+03:00"
+      "hash": "bea0b19984f83186",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/rasshirenie-spetsifikatsii/": {
-      "hash": "8a6cb0a1aac34569",
-      "lastmod": "2026-08-26T05:51:21+03:00"
+      "hash": "141c3c1506dab84e",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/shtrafy-i-rastorzhenie-kontrakta/": {
-      "hash": "d9bf9e1cae1a198e",
-      "lastmod": "2026-08-26T05:51:21+03:00"
+      "hash": "ae30c0bbfe15cdc0",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/documents/": {
-      "hash": "2ad70f7b26cfab8c",
-      "lastmod": "2026-08-26T14:14:51+03:00"
+      "hash": "a0ef7337bd2f36d7",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/faq/": {
-      "hash": "181ba0a817ab1f0c",
-      "lastmod": "2026-08-26T14:14:51+03:00"
+      "hash": "c77e008909dcb541",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/": {
-      "hash": "3bd069a4ddc68fbb",
-      "lastmod": "2026-08-26T14:14:51+03:00"
+      "hash": "52d3ac19440eb0dc",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/frunzenskiy/": {
-      "hash": "c4c123221356e405",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "0156754c462bd0cf",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/kalininskiy/": {
-      "hash": "92f829bfc05d4ac2",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "9fe1b664d0c24fab",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/kolpinskiy/": {
-      "hash": "c9a522dbd949e6e2",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "270d541d2a1537bc",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/krasnogvardeyskiy/": {
-      "hash": "fb1688f6755b0238",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "42ab939ccae8144a",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/krasnoselskiy/": {
-      "hash": "75236f146207b0a1",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "dea1bc544ab605c0",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/kronshtadt/": {
-      "hash": "a7a6cd2348df317c",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "a38e33f41eba3127",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/kurortnyy/": {
-      "hash": "a6d416d435b294ab",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "7ba59defd4c1a68d",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/moskovskiy/": {
-      "hash": "8f6b364373b8b631",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "46a0912ca32317c7",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/nevskiy/": {
-      "hash": "7d69a02d4bbf9129",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "f96af2bff00e4801",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/petrodvortsovyy/": {
-      "hash": "bbbc0abebda534fd",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "980eda181c299688",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/primorskiy/": {
-      "hash": "e6d6ce1cb028cdc3",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "3b88a2681723ce25",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/pushkinskiy/": {
-      "hash": "dabaadb22f0bc962",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "276c0d0df1425284",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/tsentralnyy/": {
-      "hash": "83ef47fe5678623a",
-      "lastmod": "2026-08-26T13:59:35+03:00"
+      "hash": "c43059383854e836",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/vasileostrovskiy/": {
-      "hash": "69f9e4fa51dde35a",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "631696f64af579d6",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/vyborgskiy/": {
-      "hash": "436ba27935acf4d5",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "bca0196693c7ca27",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/kontakty/": {
-      "hash": "508d43d8b2a0f519",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "182e529e094d7ae9",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/": {
-      "hash": "4466e8dd94d81f04",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "b89b4c9639586441",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
-      "hash": "ef9ecd1efee1527e",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "3279a762bc356be6",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/obekt-pod-ohranoy-kgiop/": {
-      "hash": "2184b6e6b86cdd9a",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "be54d57a63b0f11a",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/port-i-terminal/": {
-      "hash": "9360950723ea90d3",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "6d1d21fe6372c08a",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/priaerodromnaya-territoriya/": {
-      "hash": "8dfeb1c0d076a726",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "2fe644f36efa683b",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/promzona/": {
-      "hash": "7d5791bbfd686ad8",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "cad822b4bbb257c4",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/sklad-i-tehnopark/": {
-      "hash": "dc510ac3ba1c902a",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "309640096f627b78",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/stroyploshchadka-do-vvoda/": {
-      "hash": "6545bb89aa9663de",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "627776cd2f4edbd8",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/": {
-      "hash": "ddf8d98a4e0c6509",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "875e09b935d62c4e",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/kato-nk-250e-v/": {
-      "hash": "a87bc39c1d8bb89e",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "e93485111fa7cdbb",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/liebherr-ltm-1090/": {
-      "hash": "1d10d3ac10c3e680",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "0751cdff3ef6657f",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/liebherr-ltm-1130/": {
-      "hash": "c189cb596f0a05ff",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "388a848cb0b17b4d",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/sany-stc400t/": {
-      "hash": "039455abf77089af",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "a004768446520c3b",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/xcmg-qy60k/": {
-      "hash": "34ba40bb3c7f220e",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "8da0ccb6f518f8da",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/zoomlion-quy50/": {
-      "hash": "d5edae8e9ba3c7a2",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "27c16e57a9be6c39",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/zoomlion-ztc1000v/": {
-      "hash": "4100f0d0d5133b85",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "3837fd25a242a63c",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/politika-obrabotki-personalnyh-dannyh/": {
-      "hash": "9d06da14540ef58c",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "4dbba139c27b0697",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/soglasie-na-obrabotku-personalnyh-dannyh/": {
-      "hash": "2e787d2330215a8e",
-      "lastmod": "2026-08-26T16:05:00+03:00"
+      "hash": "ae244be7bd2e3521",
+      "lastmod": "2026-08-27T00:06:28+03:00"
     }
   }
 }

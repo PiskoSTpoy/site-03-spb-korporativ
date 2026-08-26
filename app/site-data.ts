@@ -15,7 +15,7 @@
   остаётся: это зарезервированная RFC 2606 зона для примеров, она честно
   говорит «боевой домен ещё не подключён» и не притворяется рабочим сайтом.
 */
-export const SITE = "https://kran-spb.example";
+export const SITE = "https://kranneva.ru";
 export const BRAND = "КРАН-СПБ";
 export const PHONE_HREF = "tel:+79266266046";
 export const PHONE_TEXT = "+7 (926) 626-60-46";

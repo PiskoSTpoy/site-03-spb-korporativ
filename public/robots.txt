@@ -32,4 +32,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://kran-spb.example/sitemap.xml
+Sitemap: https://kranneva.ru/sitemap.xml

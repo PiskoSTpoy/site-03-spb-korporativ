@@ -53,7 +53,7 @@ const businessLd = {
   // с реальным номером сайта (PHONE_HREF/PHONE_TEXT, Волна 34), который уже стоит
   // в шапке, подвале и мобильной CTA-панели. JSON-LD должен описывать тот же номер.
   telephone: PHONE_HREF.replace("tel:", ""),
-  email: "info@kran-spb.example",
+  email: "info@kranneva.ru",
   url: SITE,
   priceRange: "₽₽",
   address: { "@type": "PostalAddress", addressLocality: "Санкт-Петербург", addressCountry: "RU" },
@@ -68,10 +68,37 @@ const businessLd = {
   «этот документ и есть весь сайт» (критерий sd-website-homepage).
 */
 
+/*
+  Волна приёмки (27.08.2026). Яндекс.Метрика, счётчик 111986110. Заведён
+  сегодня — до этого сайт публиковался вслепую, как site-01/site-02 до
+  своих волн приёмки. Свой счётчик, не общий с другими сайтами сети (см.
+  комментарий в nuxt.config.ts site-02 — общий счётчик был бы связью внутри
+  системы самого Яндекса, а не только совпадением по коду/CSS).
+  App Router не даёт удобного места для сырого <script> в <head> через
+  metadata API — он только для метатегов/ссылок. Ручной <head> в корневом
+  layout — задокументированная возможность именно для такого случая.
+*/
+const YM_ID = 111986110;
+const ymInit = `(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=${YM_ID}', 'ym');
+ym(${YM_ID}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={inter.variable}>
+      <head>
+        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: ymInit }} />
+      </head>
       <body>
+        <noscript>
+          <div>
+            <img src={`https://mc.yandex.ru/watch/${YM_ID}`} style={{ position: "absolute", left: "-9999px" }} width={1} height={1} alt="" />
+          </div>
+        </noscript>
         <a href="#main-content" className="skip-link">Перейти к основному содержимому</a>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessLd) }} />
         <header className="nav">
@@ -95,11 +122,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           отдельным документом — согласие на обработку ПД. С 01.09.2025
           согласие не может быть разделом политики, поэтому и в подвале, и в
           форме они стоят двумя раздельными ссылками, а не одной.
-          Домен остаётся плейсхолдером [SITE_03_DOMAIN]: боевого домена у сайта
-          нет, а правдоподобный выдуманный — хуже честного пропуска.
+          Волна приёмки (27.08.2026): домен подключён, [SITE_03_DOMAIN]
+          заменён на боевой kranneva.ru — тем же способом, что и на site-02
+          (см. tools/set_domain.py), который здесь этот плейсхолдер не ловил,
+          потому что искал только зону .example, а не квадратные скобки.
         */}
         <footer className="footer wrap">
-          <span>© 2026 {BRAND} · [SITE_03_DOMAIN]</span>
+          <span>© 2026 {BRAND} · {SITE.replace("https://", "")}</span>
           <nav className="footer__legal" aria-label="Правовая информация и контакты">
             <Link href="/kontakty/">Контакты</Link>
             <Link href="/politika-obrabotki-personalnyh-dannyh/">Политика обработки персональных данных</Link>
