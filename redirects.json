@@ -1,0 +1,41 @@
+{
+  "_comment": [
+    "Единый источник правды по 301-редиректам site-03. Раньше список жил внутри",
+    "next.config.ts в функции redirects(). После перехода на output: 'export'",
+    "(Волна приёмки) эта функция для выгружаемой статики недействительна: Next её",
+    "просто игнорирует, и все 23 старых URL начали бы отдавать 404 вместо 301.",
+    "Поэтому список вынесен сюда, и его читают ТРИ потребителя:",
+    "  1) next.config.ts — чтобы next dev / next start по-прежнему давали живые 301",
+    "     при локальной проверке (для собранной статики функция инертна);",
+    "  2) scripts/emit-redirects.mjs → out/_redirects — настоящие HTTP 301",
+    "     на Cloudflare Pages и Netlify;",
+    "  3) тот же скрипт → HTML-заглушки meta refresh + noindex + canonical",
+    "     на любом другом статическом хостинге.",
+    "Источники (за что каждый редирект отвечает) описаны в next.config.ts."
+  ],
+  "redirects": [
+    { "source": "/documents/dogovor-arendy", "destination": "/dlya-zakupok/", "statusCode": 301 },
+    { "source": "/documents/akt-vypolnennyh-rabot", "destination": "/dlya-zakupok/priemka-i-oplata/", "statusCode": 301 },
+    { "source": "/documents/dokumenty-na-tehniku-i-operatora", "destination": "/documents/", "statusCode": 301 },
+    { "source": "/blog/attestaciya-kranovshchika", "destination": "/dlya-zakupok/", "statusCode": 301 },
+    { "source": "/blog/ekspertiza-promyshlennoy-bezopasnosti", "destination": "/documents/", "statusCode": 301 },
+    { "source": "/blog/rabota-krana-ryadom-s-lep", "destination": "/obekty/promzona/", "statusCode": 301 },
+    { "source": "/blog/ogranichitel-gruzopodemnosti", "destination": "/park/", "statusCode": 301 },
+    { "source": "/blog/otvetstvennost-pri-incidente", "destination": "/dlya-zakupok/", "statusCode": 301 },
+    { "source": "/blog/razvodnye-mosty-logistika", "destination": "/obekty/", "statusCode": 301 },
+    { "source": "/blog/rabota-ryadom-s-pamyatnikom-kgiop", "destination": "/obekty/obekt-pod-ohranoy-kgiop/", "statusCode": 301 },
+    { "source": "/blog", "destination": "/obekty/", "statusCode": 301 },
+    { "source": "/keysy/podacha-na-terminal-porta", "destination": "/obekty/port-i-terminal/", "statusCode": 301 },
+    { "source": "/keysy/montazh-na-namyvnoy-territorii", "destination": "/obekty/namyvnaya-territoriya/", "statusCode": 301 },
+    { "source": "/keysy/montazh-tyazhelogo-oborudovaniya-100t", "destination": "/obekty/promzona/", "statusCode": 301 },
+    { "source": "/keysy/nochnoy-vyezd-cherez-most", "destination": "/obekty/", "statusCode": 301 },
+    { "source": "/keysy", "destination": "/obekty/", "statusCode": 301 },
+    { "source": "/uslugi/kran-dlya-porta-i-promzony/petrodvortsovyy", "destination": "/geo/petrodvortsovyy/", "statusCode": 301 },
+    { "source": "/uslugi/kran-dlya-porta-i-promzony/moskovskiy", "destination": "/geo/moskovskiy/", "statusCode": 301 },
+    { "source": "/uslugi/arenda-avtokrana-25-60-tonn/pushkinskiy", "destination": "/geo/pushkinskiy/", "statusCode": 301 },
+    { "source": "/uslugi/kran-dlya-porta-i-promzony", "destination": "/obekty/port-i-terminal/", "statusCode": 301 },
+    { "source": "/uslugi/arenda-avtokrana-25-60-tonn", "destination": "/obekty/", "statusCode": 301 },
+    { "source": "/uslugi", "destination": "/obekty/", "statusCode": 301 },
+    { "source": "/park/ivanovets-ks-8973", "destination": "/park/liebherr-ltm-1130/", "statusCode": 301 }
+  ]
+}
