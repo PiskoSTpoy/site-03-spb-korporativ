@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kranneva.ru/</loc><lastmod>2026-09-02T06:45:55+00:00</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://kranneva.ru/</loc><lastmod>2026-09-03T06:39:04+00:00</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://kranneva.ru/dlya-zakupok/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://kranneva.ru/dlya-zakupok/izmenenie-obema-i-tseny-kontrakta/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/dlya-zakupok/malye-zakupki/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -27,7 +27,8 @@
   <url><loc>https://kranneva.ru/geo/vasileostrovskiy/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/geo/vyborgskiy/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/kontakty/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kranneva.ru/obekty/</loc><lastmod>2026-09-02T11:58:24+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kranneva.ru/obekty/</loc><lastmod>2026-09-03T06:39:04+00:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kranneva.ru/obekty/most-i-puteprovod/</loc><lastmod>2026-09-03T06:39:04+00:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/namyvnaya-territoriya/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/obekt-pod-ohranoy-kgiop/</loc><lastmod>2026-08-27T00:06:28+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/ohrannaya-zona-metropolitena/</loc><lastmod>2026-09-02T06:45:55+00:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
