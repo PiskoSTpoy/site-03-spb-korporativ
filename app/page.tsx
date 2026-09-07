@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import KpForm from "./components/KpForm";
 import PrintButton from "./components/PrintButton";
 import Sources, { isoDate } from "./components/Sources";
 import SpecIllustration from "./components/SpecIllustration";
-import CardTilt from "./components/CardTilt";
 import { OG_IMAGE, SITE, BRAND, PHONE_HREF, PHONE_TEXT, FACT_CHECK, MIN_SHIFT_HOURS, CONDITION_LABELS, PRICE, PARK, OBJECT_TYPES, DISTRICTS, shiftTotal, rub } from "./site-data";
+
+// Core Web Vitals, 07.09.2026: CardTilt рендерит только null (пишет CSS-переменные
+// на существующих карточках через useEffect, см. комментарий в самом файле) — вынесен
+// в отдельный чанк через next/dynamic, чтобы его код не входил в основной бандл
+// первой загрузки и не конкурировал с hydration за главный поток на LCP-окне.
+// Визуально ничего не меняется: компонент и раньше не рендерил DOM.
+const CardTilt = dynamic(() => import("./components/CardTilt"));
 
 /*
   Волна 16. Главная перестроена под порядок чтения закупщика:
