@@ -77,15 +77,35 @@ const businessLd = {
   App Router не даёт удобного места для сырого <script> в <head> через
   metadata API — он только для метатегов/ссылок. Ручной <head> в корневом
   layout — задокументированная возможность именно для такого случая.
+
+  08.09.2026 — отложенная загрузка. webvisor:true (запись сессий) — тяжёлая
+  опция, tag.js даёт реальный вклад в scripting-время на throttled CPU
+  (см. память kran-network-core-web-vitals). Полностью убирать webvisor не
+  стал — это решение про аналитику/трекинг, не техническая правка, и
+  теряет реальную ценность (запись сессий для UX-анализа лид-формы). Вместо
+  этого — стандартный, документированный Google-паттерн «отложить сторонний
+  скрипт»: сам tag.js и вызов ym('init') откладываются до события `load`
+  (или до 4с по таймауту, если `load` почему-то не наступит) — к этому
+  моменту LCP/FCP уже случились, счётчик не конкурирует с ними за поток и
+  канал. Очередь `ym()` не нужно заводить раньше: в этом файле `ym()`
+  вызывается всего один раз (сам init), других мест в коде, которые
+  рассчитывали бы на очередь до этого момента, нет (проверено grep по app/).
+  Флаг __ymBooted — от двойного срабатывания, если `load` и таймаут-фоллбэк
+  сработают оба.
 */
 const YM_ID = 111986110;
-const ymInit = `(function(m,e,t,r,i,k,a){
+const ymInit = `function __ymBoot(){
+if (window.__ymBooted) return;
+window.__ymBooted = true;
+(function(m,e,t,r,i,k,a){
 m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 m[i].l=1*new Date();
 for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
 })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=${YM_ID}', 'ym');
-ym(${YM_ID}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});`;
+ym(${YM_ID}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+}
+if (document.readyState === 'complete') { __ymBoot(); } else { window.addEventListener('load', __ymBoot); setTimeout(__ymBoot, 4000); }`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
