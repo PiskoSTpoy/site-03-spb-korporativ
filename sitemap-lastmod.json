@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "007377a59f534ce5",
-      "lastmod": "2026-09-14T09:56:49+00:00"
+      "hash": "e4bcdfe43496f54f",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "c32793401d48018c",
@@ -22,12 +22,12 @@
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/dlya-zakupok/priemka-i-oplata/": {
-      "hash": "bea0b19984f83186",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "a68cdc788c064727",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/dlya-zakupok/rasshirenie-spetsifikatsii/": {
-      "hash": "141c3c1506dab84e",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "baa9bc8ba0983c19",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/dlya-zakupok/shtrafy-i-rastorzhenie-kontrakta/": {
       "hash": "ae30c0bbfe15cdc0",
@@ -50,8 +50,8 @@
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/kalininskiy/": {
-      "hash": "9fe1b664d0c24fab",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "acb8ca1aec537f35",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/geo/kolpinskiy/": {
       "hash": "270d541d2a1537bc",
@@ -78,36 +78,36 @@
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/nevskiy/": {
-      "hash": "f96af2bff00e4801",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "80fb2e065e123f45",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/geo/petrodvortsovyy/": {
       "hash": "980eda181c299688",
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/primorskiy/": {
-      "hash": "3b88a2681723ce25",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "4c8dc86c7635727f",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/geo/pushkinskiy/": {
-      "hash": "276c0d0df1425284",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "c08f4a7d0664f65c",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/geo/tsentralnyy/": {
       "hash": "c43059383854e836",
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/geo/vasileostrovskiy/": {
-      "hash": "631696f64af579d6",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "697b3a619fcfea06",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/geo/vyborgskiy/": {
       "hash": "bca0196693c7ca27",
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/kontakty/": {
-      "hash": "182e529e094d7ae9",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "116396716a562f82",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/obekty/": {
       "hash": "10cdb3d8a64722ef",
@@ -118,20 +118,20 @@
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/obekt-pod-ohranoy-kgiop/": {
-      "hash": "be54d57a63b0f11a",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "81a8a930f7b0a207",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/obekty/port-i-terminal/": {
-      "hash": "6d1d21fe6372c08a",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "8a6c9a4a160587c5",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/obekty/priaerodromnaya-territoriya/": {
       "hash": "2fe644f36efa683b",
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/obekty/promzona/": {
-      "hash": "cad822b4bbb257c4",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "e500fb578397519a",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/obekty/sklad-i-tehnopark/": {
       "hash": "309640096f627b78",
@@ -150,16 +150,16 @@
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/liebherr-ltm-1090/": {
-      "hash": "0751cdff3ef6657f",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "9cf6a1fcf5e8982e",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/park/liebherr-ltm-1130/": {
       "hash": "388a848cb0b17b4d",
       "lastmod": "2026-08-27T00:06:28+03:00"
     },
     "/park/sany-stc400t/": {
-      "hash": "a004768446520c3b",
-      "lastmod": "2026-08-27T00:06:28+03:00"
+      "hash": "d0044886fe3ae07f",
+      "lastmod": "2026-09-14T18:24:34+03:00"
     },
     "/park/xcmg-qy60k/": {
       "hash": "8da0ccb6f518f8da",

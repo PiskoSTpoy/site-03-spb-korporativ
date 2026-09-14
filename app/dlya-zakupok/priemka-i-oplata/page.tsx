@@ -194,6 +194,15 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="section wrap prose section--flush measure">
+        <p>
+          Эта цепочка не зависит от того, как выбран подрядчик: она одинакова и для конкурентной
+          процедуры, и для заявки в пределах порога{" "}
+          <Link href="/dlya-zakupok/malye-zakupki/">малого объёма</Link> без конкурса — способ
+          определения поставщика не освобождает от сменного рапорта, УПД и законных сроков оплаты.
+        </p>
+      </section>
+
       <Sources
         date={FACT_CHECK}
         items={[

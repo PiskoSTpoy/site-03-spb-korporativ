@@ -724,6 +724,10 @@ export default function Home() {
         <p className="page-contact">
           Телефон для срочных заявок: <a href={PHONE_HREF}>{PHONE_TEXT}</a>
         </p>
+        <p className="price-note">
+          Прежде чем звонить — пропуск свыше 8 тонн, разводка мостов, допуск на терминал, защитная зона
+          памятника и намывной грунт разобраны короче, чем здесь: <Link href="/faq/">«Вопросы»</Link>.
+        </p>
       </section>
 
       <Sources
