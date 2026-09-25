@@ -55,6 +55,10 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
   openGraph.images в metadata сорока пяти страниц и не забыть про сорок шестую.
   Подпись к картинке лежит рядом в app/opengraph-image.alt.txt.
 */
-const out = join(appRoot, "app", "opengraph-image.png");
+// 25.09.2026: путь приведён к фактическому OG_IMAGE ("/og-cover.png" в site-data.ts).
+// Файловая конвенция app/opengraph-image.png не наследуется дочерними маршрутами
+// (см. комментарий к OG_IMAGE), поэтому сайт давно ссылается на public/og-cover.png,
+// а скрипт продолжал писать в app/ — картинка с новым брендом не попала бы на сайт.
+const out = join(appRoot, "public", "og-cover.png");
 await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(out);
-console.log(`make-og-image: app/opengraph-image.png 1200×630, ${(statSync(out).size / 1024).toFixed(0)} КБ`);
+console.log(`make-og-image: public/og-cover.png 1200×630, ${(statSync(out).size / 1024).toFixed(0)} КБ`);

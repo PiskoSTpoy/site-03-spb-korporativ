@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const title = "Страница не найдена — КРАН-СПБ";
+const title = "Страница не найдена — KRANNEVA";
 const description = "Такой страницы на сайте нет. Разделы: для закупок, объекты и спецификации, парк техники, география работ в Санкт-Петербурге.";
 
 export const metadata: Metadata = { title, description, robots: { index: false, follow: true } };

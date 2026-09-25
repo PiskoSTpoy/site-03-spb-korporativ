@@ -16,7 +16,7 @@
   говорит «боевой домен ещё не подключён» и не притворяется рабочим сайтом.
 */
 export const SITE = "https://kranneva.ru";
-export const BRAND = "КРАН-СПБ";
+export const BRAND = "KRANNEVA";
 export const PHONE_HREF = "tel:+79266266046";
 export const PHONE_TEXT = "+7 (926) 626-60-46";
 
@@ -1062,7 +1062,7 @@ export const FACT_CHECK_W149 = "25 сентября 2026 года";
  * Волна 147. Подпись мета-строки статей, свёрстанных по скелету
  * seo-2026-playbook. Автор — организация, без выдуманных людей.
  */
-export const EDITORIAL = "Редакция КРАН-СПБ";
+export const EDITORIAL = "Редакция KRANNEVA";
 
 /**
  * Волна 126. Единый состав главного меню.
