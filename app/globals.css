@@ -1320,3 +1320,13 @@ p.lede-note, .lede-note { font-size: var(--t-small); color: var(--muted); line-h
      пробелом (см. rub() в site-data.ts). */
   .dtable__num { white-space: normal; }
 }
+
+/* Волна 147. Мета-строка и оглавление статей по скелету seo-2026-playbook
+   (компонент ArticleHead). TOC рендерится в JSX, не постбилдом — см. STATUS.md. */
+.g26-meta { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: var(--s-3); font-size: var(--t-small); color: var(--muted); }
+.g26-toc { margin-top: var(--s-4); padding: 16px 20px; border: 1px solid var(--line); border-top: 2px solid var(--ink); background: var(--surface-2); max-width: 62ch; }
+.g26-toc b { font-size: var(--t-label); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.g26-toc ol { margin: 10px 0 0; padding-left: 22px; font-size: var(--t-base); }
+.g26-toc li + li { margin-top: 6px; }
+.g26-toc a { text-decoration: none; }
+.g26-toc a:hover { color: var(--accent); text-decoration: underline; }

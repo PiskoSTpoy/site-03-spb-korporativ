@@ -57,7 +57,7 @@ export default function Page() {
               ограничений и правило «вылет → класс» перенесены под таблицу типов. */}
           <p>
             Точку установки крана здесь задаёт не удобство монтажа, а то, что остаётся после
-            ограничений. Ниже — 25 типов объектов.
+            ограничений. Ниже — 28 типов объектов.
           </p>
         </div>
         <div className="rate-line">
@@ -76,7 +76,7 @@ export default function Page() {
       <section className="section wrap section--flush">
         <div className="dtable-scroll">
           <table className="dtable dtable--stack">
-            <caption>Двадцать пять типов объектов: ограничение, класс техники, срок подготовки</caption>
+            <caption>Двадцать восемь типов объектов: ограничение, класс техники, срок подготовки</caption>
             <thead>
               <tr>
                 <th scope="col">Тип объекта</th>
