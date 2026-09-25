@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/prune-export.mjs && node scripts/emit-redirects.mjs && node scripts/emit-sitemap.mjs",
+    "postbuild": "node scripts/prune-export.mjs && node scripts/emit-redirects.mjs && node scripts/emit-sitemap.mjs && node scripts/geo2026-postbuild.mjs",
     "images": "node scripts/make-webp.mjs",
     "start": "next start",
     "lint": "eslint"
