@@ -601,7 +601,7 @@ export default function Home() {
         </div>
         <div className="dtable-scroll">
           <table className="dtable dtable--stack">
-            <caption>Двадцать восемь типов объектов и что на них решает</caption>
+            <caption>Тридцать один тип объектов и что на них решает</caption>
             <thead>
               <tr>
                 <th scope="col">Тип объекта</th>
