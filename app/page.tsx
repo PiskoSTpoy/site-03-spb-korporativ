@@ -599,29 +599,20 @@ export default function Home() {
           <p>Спецификация подачи различается не по району, а по типу объекта: он задаёт ограничение доступа,
             требования к площадке и срок подготовки.</p>
         </div>
-        <div className="dtable-scroll">
-          <table className="dtable dtable--stack">
-            <caption>Тридцать четыре типа объектов и что на них решает</caption>
-            <thead>
-              <tr>
-                <th scope="col">Тип объекта</th>
-                <th scope="col">Что ограничивает раньше всего</th>
-                <th scope="col">Рабочий класс</th>
-                <th scope="col">Что задаёт срок</th>
-              </tr>
-            </thead>
-            <tbody>
-              {OBJECT_TYPES.map((o) => (
-                <tr key={o.href}>
-                  <th scope="row"><Link href={o.href}>{o.name}</Link></th>
-                  <td data-label="Что ограничивает раньше всего">{o.limit}</td>
-                  <td className="dtable__num" data-label="Рабочий класс">{o.cls}</td>
-                  <td data-label="Что задаёт срок">{o.lead}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {/* Полная таблица спецификаций (ограничение/класс/срок по каждому типу) —
+            канонически на /obekty/. Здесь дублировать её нельзя (внутренний дубль,
+            uniqueness_check 27.09.2026: главная ≈ /obekty/ на 69%), поэтому на главной —
+            список-переход ко всем типам, а сама спецификация читается на хабе. */}
+        <p className="price-note">
+          Полная спецификация по всем {OBJECT_TYPES.length} типам объектов — с ограничением, рабочим классом
+          техники и сроком подготовки для каждого — в разделе <Link href="/obekty/">«Объекты Петербурга»</Link>.
+          Ниже — быстрый переход к нужному типу.
+        </p>
+        <ul className="type-links" aria-label="Типы объектов Петербурга">
+          {OBJECT_TYPES.map((o) => (
+            <li key={o.href}><Link href={o.href}>{o.name}</Link></li>
+          ))}
+        </ul>
       </section>
 
       <section className="section wrap" id="sroki">
@@ -687,30 +678,18 @@ export default function Home() {
           <p>Пятнадцать районов, у которых логистика подачи отличается от общегородской настолько, что это меняет
             график.</p>
         </div>
-        <div className="dtable-scroll">
-          <table className="dtable dtable--stack">
-            <caption>Районы и их локальные ограничения</caption>
-            <thead>
-              <tr>
-                <th scope="col">Район</th>
-                <th scope="col">Преобладающий профиль объектов</th>
-                <th scope="col">Локальное ограничение</th>
-              </tr>
-            </thead>
-            <tbody>
-              {DISTRICTS.map((d) => (
-                <tr key={d.href}>
-                  <th scope="row"><Link href={d.href}>{d.name}</Link></th>
-                  <td data-label="Преобладающий профиль объектов">{d.profile}</td>
-                  <td data-label="Локальное ограничение">{d.limit}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {/* Полная таблица районов (профиль объектов + локальное ограничение) —
+            канонически на /geo/. На главной не дублируем (внутренний дубль,
+            uniqueness_check 27.09.2026: /geo/ ≈ главная на 46%), даём список-переход. */}
         <p className="price-note">
-          Сводка по районам с сопоставлением ограничений — <Link href="/geo/">раздел «География»</Link>.
+          Сводка по всем {DISTRICTS.length} районам — профиль объектов и локальное ограничение для каждого —
+          в разделе <Link href="/geo/">«География»</Link>. Ниже — быстрый переход к району.
         </p>
+        <ul className="type-links" aria-label="Районы Петербурга">
+          {DISTRICTS.map((d) => (
+            <li key={d.href}><Link href={d.href}>{d.name}</Link></li>
+          ))}
+        </ul>
       </section>
 
       <section className="section wrap" id="kp">
