@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W92, PRICE, rub } from "../../site-data";
 
 /*
@@ -53,9 +54,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран на Васильевском острове", description, canonical, published });
+
+const toc = [
+  { id: "mosty-glavnyy-logisticheskiy-faktor-rayona", label: "Мосты — главный логистический фактор района" },
+  { id: "namyv-na-zapade-i-istoricheskaya-chast-na-vostoke", label: "Намыв на западе и историческая часть на востоке" },
+  { id: "port-i-promyshlennaya-chast-ostrova", label: "Порт и промышленная часть острова" },
+  { id: "tsena-raboty-na-ostrove", label: "Цена работы на острове" },
+  { id: "chto-sprashivayut-pro-vasilevskiy-ostrov", label: "Что спрашивают про Васильевский остров" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -83,6 +97,7 @@ export default function Page() {
             и {PRICE[2].cls} на портовых площадках, ставка единая по городу
             от {rub(PRICE[0].rate)}/час без НДС, наценки «за остров» нет.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W92} toc={toc} />
         </div>
       </section>
 
@@ -104,7 +119,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Мосты — главный логистический фактор района</h2>
+        <h2 id="mosty-glavnyy-logisticheskiy-faktor-rayona">Мосты — главный логистический фактор района</h2>
         <p>
           Остров связан с остальным городом мостами через Большую и Малую Неву. В отличие от районов
           материковой части, здесь разводка — не теоретическая тема, а прямой фактор почти для любого
@@ -130,7 +145,7 @@ export default function Page() {
           времени подачи — так же, как с разводкой.
         </p>
 
-        <h2>Намыв на западе и историческая часть на востоке</h2>
+        <h2 id="namyv-na-zapade-i-istoricheskaya-chast-na-vostoke">Намыв на западе и историческая часть на востоке</h2>
         <p>
           Район неоднороден настолько, что фактически это две разные территории для подрядчика
           с краном. Намывные территории западной части — новая застройка на искусственно созданном
@@ -150,7 +165,7 @@ export default function Page() {
           кран собственного парка с распределённой, а не точечной нагрузкой на грунт.
         </p>
 
-        <h2>Порт и промышленная часть острова</h2>
+        <h2 id="port-i-promyshlennaya-chast-ostrova">Порт и промышленная часть острова</h2>
         <p>
           На острове расположены портовые и промышленные территории, и там действует уже не строительный,
           а объектовый режим: въезд в зону транспортной безопасности терминала сопровождается досмотром
@@ -160,7 +175,7 @@ export default function Page() {
           в разделе <Link href="/obekty/port-i-terminal/">«Порт и терминал»</Link>.
         </p>
 
-        <h2>Цена работы на острове</h2>
+        <h2 id="tsena-raboty-na-ostrove">Цена работы на острове</h2>
         <p>
           Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>.
           Отдельной наценки «за остров» или «за мост» нет и не будет: разводка влияет на время выезда,
@@ -172,7 +187,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Васильевский остров</h2>
+          <h2 id="chto-sprashivayut-pro-vasilevskiy-ostrov">Что спрашивают про Васильевский остров</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

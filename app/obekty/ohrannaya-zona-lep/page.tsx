@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W132, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -90,9 +91,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-05";
+const artLd = articleLd({ headline: "Кран у линии электропередачи: спецификация подачи в охранной зоне ЛЭП", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-dvora-promzony-ili-stroyploschadki", label: "Почему это отдельный тип объекта, а не часть двора, промзоны или стройплощадки" },
+  { id: "chto-reguliruet-soglasovanie-i-kuda-idyot-zayavka", label: "Что регулирует согласование и куда идёт заявка" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -113,6 +124,7 @@ export default function Page() {
             и не заметить, что ограничивает не площадка под выносными опорами, а зона работы
             стрелы и расстояние до провода, находящегося под напряжением.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W132} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -161,7 +173,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это отдельный тип объекта, а не часть двора, промзоны или стройплощадки</h2>
+        <h2 id="pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-dvora-promzony-ili-stroyploschadki">Почему это отдельный тип объекта, а не часть двора, промзоны или стройплощадки</h2>
         <p>
           У большинства прежних типов объектов ограничение либо видно на месте, либо скрыто
           под площадкой. Завод виден по проходной на{" "}
@@ -184,7 +196,7 @@ export default function Page() {
           от заводской подстанции.
         </p>
 
-        <h2>Что регулирует согласование и куда идёт заявка</h2>
+        <h2 id="chto-reguliruet-soglasovanie-i-kuda-idyot-zayavka">Что регулирует согласование и куда идёт заявка</h2>
         <p>
           Действующая основа — постановление Правительства РФ от 24.02.2009 № 160 «О порядке
           установления охранных зон объектов электросетевого хозяйства и особых условий

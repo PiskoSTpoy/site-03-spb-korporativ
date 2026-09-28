@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W90, PRICE, rub } from "../../site-data";
 
 /*
@@ -68,9 +69,23 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Калининском районе", description, canonical, published });
+
+const toc = [
+  { id: "biznes-tsentr-na-meste-zavoda-stalkonstruktsiya", label: "Бизнес-центр на месте завода «Стальконструкция»" },
+  { id: "dva-korpusa-i-chto-v-nih-razmestyat", label: "Два корпуса и что в них разместят" },
+  { id: "chto-my-podnimaem-na-ploschadke", label: "Что мы поднимаем на площадке" },
+  { id: "odin-rayon-granitsa-prohodit-po-samoy-litovskoy-ulitse", label: "Один район — граница проходит по самой Литовской улице" },
+  { id: "tsena-raboty-v-kalininskom-rayone", label: "Цена работы в Калининском районе" },
+  { id: "chto-sprashivayut-pro-kalininskiy-rayon", label: "Что спрашивают про Калининский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -91,6 +106,7 @@ export default function Page() {
             больше 35 метров — сразу задаёт класс техники с запасом по высоте подъёма, а не только
             по грузоподъёмности.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W90} toc={toc} />
         </div>
       </section>
 
@@ -112,7 +128,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Бизнес-центр на месте завода «Стальконструкция»</h2>
+        <h2 id="biznes-tsentr-na-meste-zavoda-stalkonstruktsiya">Бизнес-центр на месте завода «Стальконструкция»</h2>
         <p>Трест по монтажу стальных конструкций был образован постановлением Совета министров СССР
           5 ноября 1951 года как «Стальмонтаж-5», а приказом Минстроя от 21 января 1961 года переименован
           в «Севзапстальконструкцию» — монтаж металлоконструкций на промышленных объектах северо-запада
@@ -133,7 +149,7 @@ export default function Page() {
           финальный проект фасадов — уже после сноса, то есть проект современный, а не эскиз трёхлетней
           давности.</p>
 
-        <h2>Два корпуса и что в них разместят</h2>
+        <h2 id="dva-korpusa-i-chto-v-nih-razmestyat">Два корпуса и что в них разместят</h2>
         <p>Новое здание — два объёма П-образной формы, соединённые остеклённым переходом на седьмом этаже.
           Источники расходятся в этажности: kanoner.com (и в 2024-м, и повторно в марте 2026-го) называет
           оба корпуса девятиэтажными, kp.ru в 2024 году писал о десяти этажах — расхождение не устранено,
@@ -143,7 +159,7 @@ export default function Page() {
           67 тыс. м² — заметно больше ранней оценки конца 2023 года (25–30 тыс. м² без учёта паркинга,
           до утверждения финального проекта). Срок сдачи обеих очередей — не позднее 4 января 2028 года.</p>
 
-        <h2>Что мы поднимаем на площадке</h2>
+        <h2 id="chto-my-podnimaem-na-ploschadke">Что мы поднимаем на площадке</h2>
         <p>Девятиэтажный каркас высотой больше 35 метров — задача не по весу, а по высоте подъёма: здесь
           в парке работают <Link href="/park/liebherr-ltm-1090/">Liebherr LTM 1090-4.1</Link> и{" "}
           <Link href="/park/liebherr-ltm-1130/">Liebherr LTM 1130-5.1</Link> — тот же класс техники, что
@@ -153,7 +169,7 @@ export default function Page() {
           и площадь опирания здесь согласуют на каждый выезд заново, а не один раз на весь проект, — площадка
           меняется по ходу стройки.</p>
 
-        <h2>Один район — граница проходит по самой Литовской улице</h2>
+        <h2 id="odin-rayon-granitsa-prohodit-po-samoy-litovskoy-ulitse">Один район — граница проходит по самой Литовской улице</h2>
         <p>Литовская улица не просто соседствует с границей Калининского и Выборгского районов — она сама
           и есть эта граница: административная линия идёт по её оси. Из-за этого на одной улице оказались
           два объекта из нашей географии с разной пропиской: технопарк L618 в{" "}
@@ -168,7 +184,7 @@ export default function Page() {
           сегодня там та же логика соседних промзон правобережья Невы, только с новыми технопарками
           вместо редевелопмента одного завода.</p>
 
-        <h2>Цена работы в Калининском районе</h2>
+        <h2 id="tsena-raboty-v-kalininskom-rayone">Цена работы в Калининском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Для
           площадки на Литовской отдельно закладываем время на согласование даты с застройщиком: у объекта
           нет фиксированного годового графика допуска, как у уже введённого в эксплуатацию здания, —
@@ -181,7 +197,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Калининский район</h2>
+          <h2 id="chto-sprashivayut-pro-kalininskiy-rayon">Что спрашивают про Калининский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

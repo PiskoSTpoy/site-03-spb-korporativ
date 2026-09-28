@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W81, PRICE, rub } from "../../site-data";
 
 /*
@@ -62,9 +63,21 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран на склад и в технопарк: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-sklad-eto-ne-promzona", label: "Почему склад — это не промзона" },
+  { id: "segment-kotoryy-rastyot-bystree-sklada-voobsche", label: "Сегмент, который растёт быстрее склада вообще" },
+  { id: "klass-sklada-reshaet-kakaya-tehnika-nuzhna", label: "Класс склада решает, какая техника нужна" },
+  { id: "tsena-i-chto-my-utochnyaem", label: "Цена и что мы уточняем" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -83,6 +96,7 @@ export default function Page() {
             весь 2025 год. Для крана это означает частые, но небольшие заявки: не один большой монтаж на
             одной площадке, а заезд очередного резидента технопарка или склада по своему графику.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W81} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -130,7 +144,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему склад — это не промзона</h2>
+        <h2 id="pochemu-sklad-eto-ne-promzona">Почему склад — это не промзона</h2>
         <p>
           На действующем производстве (спецификация <Link href="/obekty/promzona/">«Промзона»</Link>) один
           заказчик, один пропускной режим и, как правило, одна крупная задача на весь выезд. На складе или
@@ -141,7 +155,7 @@ export default function Page() {
           правило, нет.
         </p>
 
-        <h2>Сегмент, который растёт быстрее склада вообще</h2>
+        <h2 id="segment-kotoryy-rastyot-bystree-sklada-voobsche">Сегмент, который растёт быстрее склада вообще</h2>
         <p>
           Петербургский регион занимает второе место в стране по объёму light industrial после Московской
           агломерации: по данным Commonwealth Partnership на апрель 2026 года, в городе и области уже
@@ -155,7 +169,7 @@ export default function Page() {
           волной, а по мере того, как заезжает очередной резидент.
         </p>
 
-        <h2>Класс склада решает, какая техника нужна</h2>
+        <h2 id="klass-sklada-reshaet-kakaya-tehnika-nuzhna">Класс склада решает, какая техника нужна</h2>
         <p>
           Складская недвижимость делится на классы А, В, С и D, и это не маркетинговая, а инженерная
           классификация. У склада класса А потолки от 10 м (что и позволяет ставить многоярусные стеллажи),
@@ -167,7 +181,7 @@ export default function Page() {
           класса — но с более частой повторяемостью заявки.
         </p>
 
-        <h2>Цена и что мы уточняем</h2>
+        <h2 id="tsena-i-chto-my-utochnyaem">Цена и что мы уточняем</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Для
           въезда на территорию склада или технопарка отдельно уточняем регламент управляющей компании:
           на части площадок его нужно согласовывать за несколько дней, на части — достаточно списка на

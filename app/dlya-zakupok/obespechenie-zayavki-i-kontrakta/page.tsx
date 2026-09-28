@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W25 } from "../../site-data";
 
 /*
@@ -41,9 +42,22 @@ const breadcrumbLd = {
   ],
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Обеспечение заявки и исполнения контракта: размер и способы", description, canonical, published });
+
+const toc = [
+  { id: "obespechenie-zayavki-na-uchastie-st-44-44-fz", label: "Обеспечение заявки на участие: ст. 44 44-ФЗ" },
+  { id: "obespechenie-ispolneniya-kontrakta-st-96-44-fz", label: "Обеспечение исполнения контракта: ст. 96 44-ФЗ" },
+  { id: "nezavisimaya-garantiya-chto-proveryaet-zakazchik", label: "Независимая гарантия: что проверяет заказчик" },
+  { id: "223-fz-diapazony-zadayot-ne-zakon-a-polozhenie-o-zakupke", label: "223-ФЗ: диапазоны задаёт не закон, а положение о закупке" },
+  { id: "chto-eto-znachit-dlya-nashego-kp", label: "Что это значит для нашего КП" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="crumbs wrap" aria-label="Хлебные крошки">
@@ -60,6 +74,7 @@ export default function Page() {
             контракта: деньгами или независимой гарантией банка. Правила у двух законов разные,
             и путают их регулярно — ниже точные пороги и диапазоны, а не общее «обычно так».
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W25} toc={toc} />
         </div>
         <PrintButton label="Распечатать раздел про обеспечение" />
       </section>
@@ -67,7 +82,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="zayavka">
         <div className="section-head">
           <span className="eyebrow">Раздел 01</span>
-          <h2>Обеспечение заявки на участие: ст. 44 44-ФЗ</h2>
+          <h2 id="obespechenie-zayavki-na-uchastie-st-44-44-fz">Обеспечение заявки на участие: ст. 44 44-ФЗ</h2>
           <p>Размер жёстко привязан к начальной (максимальной) цене контракта (НМЦК) — участник закупки
             сам выбирает способ: деньгами или независимой гарантией.</p>
         </div>
@@ -97,7 +112,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="kontrakt">
         <div className="section-head">
           <span className="eyebrow">Раздел 02</span>
-          <h2>Обеспечение исполнения контракта: ст. 96 44-ФЗ</h2>
+          <h2 id="obespechenie-ispolneniya-kontrakta-st-96-44-fz">Обеспечение исполнения контракта: ст. 96 44-ФЗ</h2>
         </div>
         <div className="dtable-scroll">
           <table className="dtable">
@@ -124,7 +139,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="garantiya">
         <div className="section-head">
           <span className="eyebrow">Раздел 03</span>
-          <h2>Независимая гарантия: что проверяет заказчик</h2>
+          <h2 id="nezavisimaya-garantiya-chto-proveryaet-zakazchik">Независимая гарантия: что проверяет заказчик</h2>
           <p>Гарантия банка — не бумага с печатью, а запись, которую заказчик сверяет по реестру,
             а не на глаз.</p>
         </div>
@@ -139,7 +154,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="223fz">
         <div className="section-head">
           <span className="eyebrow">Раздел 04</span>
-          <h2>223-ФЗ: диапазоны задаёт не закон, а положение о закупке</h2>
+          <h2 id="223-fz-diapazony-zadayot-ne-zakon-a-polozhenie-o-zakupke">223-ФЗ: диапазоны задаёт не закон, а положение о закупке</h2>
           <p>44-ФЗ фиксирует проценты жёстко. 223-ФЗ — нет: заказчик сам решает, требовать ли
             обеспечение, и сам задаёт размер и порядок возврата в собственном положении о закупке.
             Закон ограничивает только верхнюю планку и порог освобождения.</p>
@@ -165,7 +180,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="praktika">
         <div className="section-head">
           <span className="eyebrow">Раздел 05</span>
-          <h2>Что это значит для нашего КП</h2>
+          <h2 id="chto-eto-znachit-dlya-nashego-kp">Что это значит для нашего КП</h2>
         </div>
         <p className="price-note">
           Мы не публикуем фиксированную политику «всегда деньгами» или «всегда гарантией» — для каждого

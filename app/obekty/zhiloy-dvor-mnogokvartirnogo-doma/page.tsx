@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W146, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -73,9 +74,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-24";
+const artLd = articleLd({ headline: "Кран во дворе жилого дома: спецификация подачи для двора-колодца и нового квартала", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-vo-dvor-kolodets-zahodit-ne-kazhdaya-mashina", label: "Почему во двор-колодец заходит не каждая машина" },
+  { id: "chem-dvor-otlichaetsya-ot-drugih-tipov-obektov", label: "Чем двор отличается от других типов объектов" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -94,6 +105,7 @@ export default function Page() {
             Площадки и проезды для пожарной техники занимать нельзя. Сам двор часто
             принадлежит не городу, а собственникам квартир.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W146} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -142,7 +154,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему во двор-колодец заходит не каждая машина</h2>
+        <h2 id="pochemu-vo-dvor-kolodets-zahodit-ne-kazhdaya-mashina">Почему во двор-колодец заходит не каждая машина</h2>
         <p>
           В историческом центре двор часто связан с улицей только аркой, а за ней нужно сразу
           повернуть. Грузоподъёмность здесь вторична: 40-тонник, который поднял бы груз
@@ -154,7 +166,7 @@ export default function Page() {
           по правилам занятия городской территории, а не двора.
         </p>
 
-        <h2>Чем двор отличается от других типов объектов</h2>
+        <h2 id="chem-dvor-otlichaetsya-ot-drugih-tipov-obektov">Чем двор отличается от других типов объектов</h2>
         <p>
           Охранный статус самого здания описан в спецификации{" "}
           <Link href="/obekty/obekt-pod-ohranoy-kgiop/">объекта под охраной КГИОП</Link>, а специфика

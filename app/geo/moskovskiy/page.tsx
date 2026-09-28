@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, PRICE, rub } from "../../site-data";
 
 /*
@@ -53,9 +54,20 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Московском районе", description, canonical, published });
+
+const toc = [
+  { id: "deystvuyuschee-proizvodstvo-i-stroyka-cherez-dorogu", label: "Действующее производство и стройка через дорогу" },
+  { id: "chto-reshaet-na-promyshlennoy-ploschadke", label: "Что решает на промышленной площадке" },
+  { id: "chto-sprashivayut-pro-moskovskiy-rayon", label: "Что спрашивают про Московский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -83,6 +95,7 @@ export default function Page() {
             и пищевого профиля соседствуют с масштабной жилой застройкой на бывших промышленных
             территориях, и два соседних адреса работают по совершенно разным правилам доступа.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
       </section>
 
@@ -104,7 +117,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Действующее производство и стройка через дорогу</h2>
+        <h2 id="deystvuyuschee-proizvodstvo-i-stroyka-cherez-dorogu">Действующее производство и стройка через дорогу</h2>
         <p>
           Типовая ситуация района: на одной улице стоят предприятие с проходной, охраной и собственными
           правилами для подрядчиков — и жилой комплекс на территории, освобождённой от производства.
@@ -118,7 +131,7 @@ export default function Page() {
           тем меньше шансов, что согласованная смена сорвётся на проходной.
         </p>
 
-        <h2>Что решает на промышленной площадке</h2>
+        <h2 id="chto-reshaet-na-promyshlennoy-ploschadke">Что решает на промышленной площадке</h2>
         <p>
           Оборудование, которое нужно поднять, обычно стоит там, где стоит, а кран встаёт там, где есть
           место под все четыре опоры и подъезд. Значит, считать надо от вылета: на предельном вылете
@@ -138,7 +151,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Московский район</h2>
+          <h2 id="chto-sprashivayut-pro-moskovskiy-rayon">Что спрашивают про Московский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

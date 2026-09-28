@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, PRICE, rub } from "../../site-data";
 
 /*
@@ -52,9 +53,20 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Пушкинском районе", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-zdes-prosche-s-dopuskami-i-slozhnee-s-ploschadkoy", label: "Почему здесь проще с допусками и сложнее с площадкой" },
+  { id: "tipovye-zadachi-i-podbor-klassa", label: "Типовые задачи и подбор класса" },
+  { id: "chto-sprashivayut-pro-pushkinskiy-rayon", label: "Что спрашивают про Пушкинский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -72,6 +84,7 @@ export default function Page() {
             1,4 млн кв. м. Для подрядчика с краном это территория, где ограничение не в допусках,
             а в постоянно меняющейся геометрии стройплощадки.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
       </section>
 
@@ -93,7 +106,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему здесь проще с допусками и сложнее с площадкой</h2>
+        <h2 id="pochemu-zdes-prosche-s-dopuskami-i-slozhnee-s-ploschadkoy">Почему здесь проще с допусками и сложнее с площадкой</h2>
         <p>
           Ни портового режима, ни охранного статуса, ни намывного основания — по петербургским меркам
           это спокойный район. Инженерная инфраструктура застройки новая: под район проложено порядка
@@ -112,7 +125,7 @@ export default function Page() {
           район</Link>: расстояние там ещё больше, а ставка по классу техники не меняется ни там, ни здесь.
         </p>
 
-        <h2>Типовые задачи и подбор класса</h2>
+        <h2 id="tipovye-zadachi-i-podbor-klassa">Типовые задачи и подбор класса</h2>
         <p>
           Разгрузка транспорта с материалами, монтаж инженерного оборудования, подача материалов
           на этажи при отделке, подъём лёгких конструкций — стандартный набор массовой стройки. Класс
@@ -132,7 +145,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Пушкинский район</h2>
+          <h2 id="chto-sprashivayut-pro-pushkinskiy-rayon">Что спрашивают про Пушкинский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

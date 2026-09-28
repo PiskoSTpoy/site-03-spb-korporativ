@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W120, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -56,9 +57,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Кран в охранной зоне: спецификация подачи в центре Петербурга", description, canonical, published });
+
+const toc = [
+  { id: "dva-rezhima-kotorye-postoyanno-putayut", label: "Два режима, которые постоянно путают" },
+  { id: "chto-ohrannyy-status-menyaet-dlya-krana-fizicheski", label: "Что охранный статус меняет для крана физически" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -76,6 +87,7 @@ export default function Page() {
             они устроены по-разному, и путаница между ними стоит времени: один считается в метрах прямо
             по карте, второй существует только в законе города.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W120} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -127,7 +139,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Два режима, которые постоянно путают</h2>
+        <h2 id="dva-rezhima-kotorye-postoyanno-putayut">Два режима, которые постоянно путают</h2>
         <p>
           Защитные зоны введены статьёй 34.1 Федерального закона № 73-ФЗ. Они возникают у памятника или
           ансамбля автоматически, без отдельного решения, и их размер задан прямо в законе — те самые
@@ -145,7 +157,7 @@ export default function Page() {
           внутри границ зоны охраны независимо от расстояния до конкретного здания.
         </p>
 
-        <h2>Что охранный статус меняет для крана физически</h2>
+        <h2 id="chto-ohrannyy-status-menyaet-dlya-krana-fizicheski">Что охранный статус меняет для крана физически</h2>
         <p>
           Разрешительная часть — половина дела, и она не наша. Вторая половина видна только на площадке
           и определяет, какая машина поедет. Исторические проезды и дворы задают предел по длине

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W135, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -80,9 +81,20 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-08";
+const artLd = articleLd({ headline: "Кран на набережной: спецификация подачи в водоохранной зоне", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-granitsa-parapet-a-ne-bereg", label: "Почему граница — парапет, а не берег" },
+  { id: "chem-eto-otlichaetsya-ot-mosta-i-ot-obekta-pod-ohranoy-kgiop", label: "Чем это отличается от моста и от объекта под охраной КГИОП" },
+  { id: "chto-seychas-remontiruyut-na-naberezhnyh-peterburga", label: "Что сейчас ремонтируют на набережных Петербурга" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -105,6 +117,7 @@ export default function Page() {
             установленный Водным кодексом РФ, который запрещает определённые действия на
             площадке независимо от того, сколько тонн держит грунт под опорой.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W135} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -155,7 +168,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему граница — парапет, а не берег</h2>
+        <h2 id="pochemu-granitsa-parapet-a-ne-bereg">Почему граница — парапет, а не берег</h2>
         <p>
           Общее правило Водного кодекса РФ считает водоохранную зону от протяжённости реки: 50 м
           для рек короче 10 км, 100 м — от 10 до 50 км, 200 м — от 50 км и длиннее; внутри неё
@@ -176,7 +189,7 @@ export default function Page() {
           универсальным.
         </p>
 
-        <h2>Чем это отличается от моста и от объекта под охраной КГИОП</h2>
+        <h2 id="chem-eto-otlichaetsya-ot-mosta-i-ot-obekta-pod-ohranoy-kgiop">Чем это отличается от моста и от объекта под охраной КГИОП</h2>
         <p>
           С <Link href="/obekty/most-i-puteprovod/">мостом и путепроводом</Link> этот тип объекта
           путают чаще всего — оба связаны с водой и городской переправой. Разница в предмете
@@ -196,7 +209,7 @@ export default function Page() {
           советской набережной без охранного статуса в равной мере.
         </p>
 
-        <h2>Что сейчас ремонтируют на набережных Петербурга</h2>
+        <h2 id="chto-seychas-remontiruyut-na-naberezhnyh-peterburga">Что сейчас ремонтируют на набережных Петербурга</h2>
         <p>
           В 2026 году город ведёт капитальный ремонт порядка 50 тысяч квадратных метров набережных
           и мостов одновременно на разных объектах, а не по единому графику. Три предметных примера.

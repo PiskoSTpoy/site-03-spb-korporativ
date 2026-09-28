@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W138, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -74,9 +75,21 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-10";
+const artLd = articleLd({ headline: "Автокран на территории аэродрома Пулково: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-ne-priaerodromnaya-territoriya", label: "Почему это не приаэродромная территория" },
+  { id: "pochemu-seychas-eto-ne-abstraktnyy-stsenariy", label: "Почему сейчас это не абстрактный сценарий" },
+  { id: "kak-ustroen-dopusk-tehniki-na-aerodrom", label: "Как устроен допуск техники на аэродром" },
+  { id: "tsena-i-chto-my-utochnyaem", label: "Цена и что мы уточняем" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -97,6 +110,7 @@ export default function Page() {
             Единственный гражданский аэродром такого масштаба в городской черте — Пулково, и спецификация
             ниже — про подачу техники именно туда.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W138} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -146,7 +160,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это не приаэродромная территория</h2>
+        <h2 id="pochemu-eto-ne-priaerodromnaya-territoriya">Почему это не приаэродромная территория</h2>
         <p>
           Название путают часто, а основания у ограничений разные. Приаэродромная территория — это зона
           НАД площадкой: федеральный высотный лимит по секторам, установленный приказом Росавиации в силу
@@ -163,7 +177,7 @@ export default function Page() {
           стрелы, проверка высотного лимита по сектору добавляется к допуску, а не заменяет его.
         </p>
 
-        <h2>Почему сейчас это не абстрактный сценарий</h2>
+        <h2 id="pochemu-seychas-eto-ne-abstraktnyy-stsenariy">Почему сейчас это не абстрактный сценарий</h2>
         <p>
           Пулково — единственный гражданский аэропорт Петербурга, и в ближайшие годы это не спокойная
           площадка с историческим зданием, а действующая стройка. По сообщениям СМИ, программа
@@ -177,7 +191,7 @@ export default function Page() {
           порядок допуска, чем каждый раз собирать его заново с нуля.
         </p>
 
-        <h2>Как устроен допуск техники на аэродром</h2>
+        <h2 id="kak-ustroen-dopusk-tehniki-na-aerodrom">Как устроен допуск техники на аэродром</h2>
         <p>
           Общая часть для любого объекта транспортной инфраструктуры воздушного транспорта задана
           постановлением Правительства РФ от 05.10.2020 № 1605: досмотр транспортного средства и людей,
@@ -195,7 +209,7 @@ export default function Page() {
           а не закладывается в общий срок мобилизации техники.
         </p>
 
-        <h2>Цена и что мы уточняем</h2>
+        <h2 id="tsena-i-chto-my-utochnyaem">Цена и что мы уточняем</h2>
         <p>
           Ставка зависит от класса техники, а не от того, что объект лежит на территории аэродрома —
           отдельной наценки «за аэродром» в прайсе нет, см. <Link href="/#price">прайс-лист</Link>. До

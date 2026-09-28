@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, MIN_SHIFT_HOURS } from "../../site-data";
 
 const title = "Приёмка смены, закрывающие документы и сроки оплаты";
@@ -31,9 +32,21 @@ const breadcrumbLd = {
   ],
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Приёмка смены, закрывающие документы и сроки оплаты", description, canonical, published });
+
+const toc = [
+  { id: "smennyy-raport-chto-v-nyom-fiksiruetsya", label: "Сменный рапорт: что в нём фиксируется" },
+  { id: "zakryvayuschie-dokumenty-i-elektronnyy-dokumentooborot", label: "Закрывающие документы и электронный документооборот" },
+  { id: "sroki-oplaty-ustanovlennye-zakonom", label: "Сроки оплаты, установленные законом" },
+  { id: "tri-prichiny-po-kotorym-zakrytie-tormozit", label: "Три причины, по которым закрытие тормозит" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="crumbs wrap" aria-label="Хлебные крошки">
@@ -58,6 +71,7 @@ export default function Page() {
             по 44-ФЗ вне ЕИС. Расхождение на любом звене цепочки останавливает оплату, и почти всегда
             причина одна и та же — рапорт подписан не тем и не тогда.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
         <PrintButton label="Распечатать порядок приёмки" />
       </section>
@@ -65,7 +79,7 @@ export default function Page() {
       <section className="section wrap section--flush">
         <div className="section-head">
           <span className="eyebrow">Раздел 01</span>
-          <h2>Сменный рапорт: что в нём фиксируется</h2>
+          <h2 id="smennyy-raport-chto-v-nyom-fiksiruetsya">Сменный рапорт: что в нём фиксируется</h2>
           <p>Первичный документ по факту работы. Его подписывает представитель заказчика на объекте
             в день смены, а не бухгалтерия через две недели по памяти.</p>
         </div>
@@ -92,7 +106,7 @@ export default function Page() {
       <section className="section wrap section--flush">
         <div className="section-head">
           <span className="eyebrow">Раздел 02</span>
-          <h2>Закрывающие документы и электронный документооборот</h2>
+          <h2 id="zakryvayuschie-dokumenty-i-elektronnyy-dokumentooborot">Закрывающие документы и электронный документооборот</h2>
         </div>
         <div className="dtable-scroll">
           <table className="dtable">
@@ -120,7 +134,7 @@ export default function Page() {
       <section className="section wrap section--flush">
         <div className="section-head">
           <span className="eyebrow">Раздел 03</span>
-          <h2>Сроки оплаты, установленные законом</h2>
+          <h2 id="sroki-oplaty-ustanovlennye-zakonom">Сроки оплаты, установленные законом</h2>
           <p>Для закупок эти сроки не предмет переговоров: они заданы законом и отсчитываются от подписания
             документа о приёмке, а не от даты выставления счёта.</p>
         </div>
@@ -165,7 +179,7 @@ export default function Page() {
       <section className="section wrap section--flush">
         <div className="section-head">
           <span className="eyebrow">Раздел 04</span>
-          <h2>Три причины, по которым закрытие тормозит</h2>
+          <h2 id="tri-prichiny-po-kotorym-zakrytie-tormozit">Три причины, по которым закрытие тормозит</h2>
         </div>
         <div className="dtable-scroll">
           <table className="dtable">

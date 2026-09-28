@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W136, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -58,9 +59,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-08";
+const artLd = articleLd({ headline: "Кран у границы ООПТ: спецификация подачи в Петербурге", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-granitsa-oopt-eto-ne-eschyo-odna-ohrannaya-zona", label: "Почему граница ООПТ — это не ещё одна охранная зона" },
+  { id: "gde-v-peterburge-eto-vstrechaetsya-na-praktike", label: "Где в Петербурге это встречается на практике" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -83,6 +94,7 @@ export default function Page() {
             а не внутри неё, и первая задача — подтвердить, что пятно установки опор и вылет
             стрелы физически её не пересекают.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W136} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -131,7 +143,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему граница ООПТ — это не ещё одна охранная зона</h2>
+        <h2 id="pochemu-granitsa-oopt-eto-ne-eschyo-odna-ohrannaya-zona">Почему граница ООПТ — это не ещё одна охранная зона</h2>
         <p>
           У каждого прежнего типа объекта на этой странице ограничение снимается процедурой:
           <Link href="/obekty/ohrannaya-zona-gazoprovoda/"> охранная зона газопровода</Link> —
@@ -166,7 +178,7 @@ export default function Page() {
           для отказа от проверки.
         </p>
 
-        <h2>Где в Петербурге это встречается на практике</h2>
+        <h2 id="gde-v-peterburge-eto-vstrechaetsya-na-praktike">Где в Петербурге это встречается на практике</h2>
         <p>
           Ближе всего к строительной активности города — Юнтоловский заказник в западной части{" "}
           <Link href="/geo/primorskiy/">Приморского района</Link>: его граница утверждена ещё

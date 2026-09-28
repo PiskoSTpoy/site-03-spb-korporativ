@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 const title = "Кран на намывной территории СПб: спецификация подачи техники";
@@ -49,9 +50,18 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран на намывной территории: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-rovno-i-utrambovano-ne-otvet", label: "Почему «ровно и утрамбовано» — не ответ" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -70,6 +80,7 @@ export default function Page() {
             следствие: несущая способность здесь — свойство точки, а не площадки, поэтому рабочие
             классы 25–40 т и 41–80 т подтверждаются по точке установки, а не по адресу объекта.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -119,7 +130,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему «ровно и утрамбовано» — не ответ</h2>
+        <h2 id="pochemu-rovno-i-utrambovano-ne-otvet">Почему «ровно и утрамбовано» — не ответ</h2>
         <p>
           Намывной грунт неоднороден по плотности сильнее давно освоенных территорий: соседние точки одной
           и той же с виду ровной площадки могут отличаться по несущей способности в зависимости от того,

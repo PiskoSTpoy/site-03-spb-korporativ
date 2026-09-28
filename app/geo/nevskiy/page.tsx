@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, PRICE, rub } from "../../site-data";
 
 /*
@@ -43,9 +44,23 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Невском районе", description, canonical, published });
+
+const toc = [
+  { id: "promyshlennyy-profil-rayona", label: "Промышленный профиль района" },
+  { id: "propusknoy-rezhim-promyshlennyh-ploschadok", label: "Пропускной режим промышленных площадок" },
+  { id: "dva-berega-dva-raznyh-plana-vyezda", label: "Два берега — два разных плана выезда" },
+  { id: "zhilaya-zastroyka-vdol-nevy", label: "Жилая застройка вдоль Невы" },
+  { id: "tsena-raboty-v-nevskom-rayone", label: "Цена работы в Невском районе" },
+  { id: "chto-sprashivayut-pro-nevskiy-rayon", label: "Что спрашивают про Невский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -62,6 +77,7 @@ export default function Page() {
             исторический Обуховский завод, — соседствует с жилой застройкой Рыбацкого и Народной улицы.
             Единственный район города, который река разрезает на две части целиком.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
       </section>
 
@@ -83,14 +99,14 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Промышленный профиль района</h2>
+        <h2 id="promyshlennyy-profil-rayona">Промышленный профиль района</h2>
         <p>Невский район — крупнейшая по концентрации предприятий промышленная территория города:
           здесь работает порядка 12 тысяч крупных и небольших производств. Исторически район
           формировался вокруг машиностроительных и металлургических предприятий, крупнейшее из которых —
           Обуховский завод, один из старейших промышленных объектов города. Для заявок с этой территории
           заметно чаще, чем в среднем по городу, актуален пропускной режим конкретного предприятия.</p>
 
-        <h2>Пропускной режим промышленных площадок</h2>
+        <h2 id="propusknoy-rezhim-promyshlennyh-ploschadok">Пропускной режим промышленных площадок</h2>
         <p>Для работы на территории действующих предприятий оформляем допуск на технику и бригаду
           по правилам конкретного объекта: точный перечень требуемых документов определяет само
           предприятие, единого стандарта для всех промышленных территорий района нет. Уточняем это
@@ -100,21 +116,21 @@ export default function Page() {
           производства и новой жилой застройки на соседних адресах — в{" "}
           <Link href="/geo/moskovskiy/">Московском районе</Link>: там это тоже правило, а не исключение.</p>
 
-        <h2>Два берега — два разных плана выезда</h2>
+        <h2 id="dva-berega-dva-raznyh-plana-vyezda">Два берега — два разных плана выезда</h2>
         <p>Район растянут вдоль обоих берегов Невы, и это меняет планирование сильнее, чем кажется.
           Если объект и точка базирования техники разделены рекой, а работа назначена на раннее утро,
           маршрут может пересечь разводной мост в навигацию. Правило то же, что по всему городу:
           сверяем актуальный график разводки конкретных мостов до подтверждения времени подачи.
           Общие условия подачи и график навигации — в разделе <Link href="/obekty/">«Объекты»</Link>.</p>
 
-        <h2>Жилая застройка вдоль Невы</h2>
+        <h2 id="zhilaya-zastroyka-vdol-nevy">Жилая застройка вдоль Невы</h2>
         <p>Помимо промышленной части, в районе есть жилые кварталы — Рыбацкое, территории вдоль
           проспекта Обуховской Обороны, — где задачи типовые для города: капитальный ремонт фасадов,
           монтаж инженерного оборудования, разгрузка при реконструкции жилого фонда. Проезды здесь
           обычно свободнее, чем на территории действующих производств, а допуск ограничивается
           правилами управляющей организации или генподрядчика.</p>
 
-        <h2>Цена работы в Невском районе</h2>
+        <h2 id="tsena-raboty-v-nevskom-rayone">Цена работы в Невском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>.
           Для промышленных объектов с пропускным режимом закладываем время на оформление допуска
           технике и бригаде; это уточняется на этапе заявки, а не по факту приезда на проходную.</p>
@@ -123,7 +139,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Невский район</h2>
+          <h2 id="chto-sprashivayut-pro-nevskiy-rayon">Что спрашивают про Невский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

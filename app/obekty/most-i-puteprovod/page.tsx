@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W130, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -82,9 +83,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-03";
+const artLd = articleLd({ headline: "Кран на ремонте моста и путепровода: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-kran-zdes-rabotaet-s-podhoda-a-ne-s-prolyota", label: "Почему кран здесь работает с подхода, а не с пролёта" },
+  { id: "mosty-i-puteprovody-peterburga-remontiruyut-ne-odnim-grafikom-a-desyatkami-otdelnyh-obektov", label: "Мосты и путепроводы Петербурга ремонтируют не одним графиком, а десятками отдельных объектов" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -106,6 +117,7 @@ export default function Page() {
             есть полоса отвода и балансодержатель, который решает, где технике можно встать,
             а где нет.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W130} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -156,7 +168,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему кран здесь работает с подхода, а не с пролёта</h2>
+        <h2 id="pochemu-kran-zdes-rabotaet-s-podhoda-a-ne-s-prolyota">Почему кран здесь работает с подхода, а не с пролёта</h2>
         <p>
           Несущая способность пролётного строения рассчитана на транспортную нагрузку — равномерно
           распределённый поток машин определённой массы, а не на точечную нагрузку от одной выносной
@@ -178,7 +190,7 @@ export default function Page() {
           насыпи или набережной, а не свободная площадка вокруг объекта.
         </p>
 
-        <h2>Мосты и путепроводы Петербурга ремонтируют не одним графиком, а десятками отдельных объектов</h2>
+        <h2 id="mosty-i-puteprovody-peterburga-remontiruyut-ne-odnim-grafikom-a-desyatkami-otdelnyh-obektov">Мосты и путепроводы Петербурга ремонтируют не одним графиком, а десятками отдельных объектов</h2>
         <p>
           В городе одновременно идёт ремонт нескольких искусственных дорожных сооружений, и у каждого
           свой график и свой балансодержатель, а не единое городское расписание, как у навигационной

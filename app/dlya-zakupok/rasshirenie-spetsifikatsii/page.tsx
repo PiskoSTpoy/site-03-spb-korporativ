@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W30 } from "../../site-data";
 
 /*
@@ -145,9 +146,13 @@ const fleet = [
   },
 ];
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Техника вне спецификации автокрана: партнёрская сеть на весь спектр закупки", description, canonical, published });
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="crumbs wrap" aria-label="Хлебные крошки">
@@ -168,6 +173,7 @@ export default function Page() {
             подбираем и подаём под это ТЗ через партнёрскую сеть. Ниже — где именно проходит
             граница и как устроена процедура по всем семи категориям.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W30} toc={[]} />
         </div>
         <PrintButton label="Распечатать раздел про партнёрскую сеть" />
       </section>
@@ -189,7 +195,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="granitsa">
         <div className="section-head">
           <span className="eyebrow">Раздел 01</span>
-          <h2>Где граница: собственный парк и партнёрская сеть</h2>
+          <h2 id="gde-granitsa-sobstvennyy-park-i-partnyorskaya-set">Где граница: собственный парк и партнёрская сеть</h2>
           <p>Две разные вещи, и в КП они помечены по-разному, а не сливаются в один
             безымянный список «техника».</p>
         </div>
@@ -219,7 +225,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="tehnika">
         <div className="section-head">
           <span className="eyebrow">Раздел 02</span>
-          <h2>Какую технику подбираем и что нужно из ТЗ</h2>
+          <h2 id="kakuyu-tehniku-podbiraem-i-chto-nuzhno-iz-tz">Какую технику подбираем и что нужно из ТЗ</h2>
           <p>Семь типов техники, с которыми чаще всего приходит запрос по лотам вне
             автокрановой специализации: от подъёмной (гусеничный и башенный кран, манипулятор,
             автовышка) до сопутствующей (экскаватор, самосвал, трал под негабарит). По каждому —
@@ -263,7 +269,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="podvidy">
         <div className="section-head">
           <span className="eyebrow">Раздел 03</span>
-          <h2>Подвиды и классы внутри каждой категории</h2>
+          <h2 id="podvidy-i-klassy-vnutri-kazhdoy-kategorii">Подвиды и классы внутри каждой категории</h2>
           <p>«Башенный кран» или «трал» в заявке — это ещё не спецификация: внутри каждой из
             семи категорий есть свой конструктивный тип и своя шкала классов. Разбираться в них
             нужно до, а не после отправки запроса партнёру — ниже общеотраслевая типология по
@@ -296,7 +302,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="poryadok">
         <div className="section-head">
           <span className="eyebrow">Раздел 04</span>
-          <h2>Как формируется КП по партнёрской позиции</h2>
+          <h2 id="kak-formiruetsya-kp-po-partnyorskoy-pozitsii">Как формируется КП по партнёрской позиции</h2>
           <p>Пять шагов, из них четыре — те же, что и при заявке на собственный автокран.
             Разница только в шаге 02, где вместо расчёта по прайсу идёт запрос партнёру.</p>
         </div>
@@ -312,7 +318,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="ne-delaem">
         <div className="section-head">
           <span className="eyebrow">Раздел 05</span>
-          <h2>Чего мы не делаем</h2>
+          <h2 id="chego-my-ne-delaem">Чего мы не делаем</h2>
         </div>
         <p className="disclaimer">
           Из семи категорий этого раздела в собственном парке есть только один гусеничный кран —

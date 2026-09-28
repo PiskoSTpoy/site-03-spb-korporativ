@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W81, PRICE, rub } from "../../site-data";
 
 /*
@@ -64,9 +65,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Красногвардейском районе", description, canonical, published });
+
+const toc = [
+  { id: "novye-ploschadki-2025-2026-goda-vot-gde-seychas-nuzhen-kran", label: "Новые площадки 2025–2026 года — вот где сейчас нужен кран" },
+  { id: "chto-my-podnimaem-pri-zaezde-rezidenta", label: "Что мы поднимаем при заезде резидента" },
+  { id: "pravoberezhe-nevy-ot-porohovyh-zavodov-do-tehnoparka", label: "Правобережье Невы: от пороховых заводов до технопарка" },
+  { id: "tsena-raboty-v-krasnogvardeyskom-rayone", label: "Цена работы в Красногвардейском районе" },
+  { id: "chto-sprashivayut-pro-krasnogvardeyskiy-rayon", label: "Что спрашивают про Красногвардейский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -85,6 +99,7 @@ export default function Page() {
             «Ручьи». Для крана это означает то же самое, что и на любой новой площадке: заезд резидента —
             это монтаж оборудования и крупногабаритных конструкций, а не разовая заявка.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W81} toc={toc} />
         </div>
       </section>
 
@@ -106,7 +121,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Новые площадки 2025–2026 года — вот где сейчас нужен кран</h2>
+        <h2 id="novye-ploschadki-2025-2026-goda-vot-gde-seychas-nuzhen-kran">Новые площадки 2025–2026 года — вот где сейчас нужен кран</h2>
         <p>Технопарк «IndustrialHUB» на Индустриальном проспекте — производственно-складской комплекс
           нового поколения площадью 8 тысяч м², рассчитанный на малый и средний бизнес: высокотехнологичные
           компании, сборочные производства, мастерские, лёгкую промышленность, распределительные центры.
@@ -123,7 +138,7 @@ export default function Page() {
           на кран простой — «свободный участок в промзоне» здесь не абстракция, а несколько параллельно
           строящихся или только что открытых объектов, у каждого свой резидент и свой регламент допуска.</p>
 
-        <h2>Что мы поднимаем при заезде резидента</h2>
+        <h2 id="chto-my-podnimaem-pri-zaezde-rezidenta">Что мы поднимаем при заезде резидента</h2>
         <p>Заезд на новую площадку формата light industrial — это не один большой монтаж, а серия задач
           у разных резидентов по разным датам: разгрузка и позиционирование производственного оборудования
           через грузовые ворота, установка кровельных вентиляционных и климатических блоков, монтаж
@@ -137,7 +152,7 @@ export default function Page() {
           промышленного производства (не новой площадки) действует другая спецификация —{" "}
           <Link href="/obekty/promzona/">«Промзона»</Link>.</p>
 
-        <h2>Правобережье Невы: от пороховых заводов до технопарка</h2>
+        <h2 id="pravoberezhe-nevy-ot-porohovyh-zavodov-do-tehnoparka">Правобережье Невы: от пороховых заводов до технопарка</h2>
         <p>Красногвардейский район выделен в современных границах в 1973 году из восточной части
           Калининского района и занимает правый берег Невы — Полюстрово, Большую и Малую Охту, Пороховые,
           Ржевку и Жерновку. Название местности «Пороховые» — не метафора: с первой половины XVIII века
@@ -146,7 +161,7 @@ export default function Page() {
           и именно на свободных участках рядом с ними, а не в историческом ядре, район принимает новую
           застройку light industrial.</p>
 
-        <h2>Цена работы в Красногвардейском районе</h2>
+        <h2 id="tsena-raboty-v-krasnogvardeyskom-rayone">Цена работы в Красногвардейском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Для
           новой площадки технопарка или складского комплекса закладываем время на уточнение регламента
           управляющей компании — он оформляется отдельно от городского грузового пропуска и заранее не
@@ -156,7 +171,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Красногвардейский район</h2>
+          <h2 id="chto-sprashivayut-pro-krasnogvardeyskiy-rayon">Что спрашивают про Красногвардейский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

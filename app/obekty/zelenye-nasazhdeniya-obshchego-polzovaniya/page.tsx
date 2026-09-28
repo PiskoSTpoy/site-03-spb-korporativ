@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W143, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 const title = "Кран у зелёных насаждений общего пользования: спецификация подачи";
@@ -45,9 +46,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-20";
+const artLd = articleLd({ headline: "Кран на территории зелёных насаждений общего пользования (ЗНОП)", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-status-znop-eto-ne-prosto-est-derevya", label: "Почему статус ЗНОП — это не просто «есть деревья»" },
+  { id: "kto-soglasuet-tehniku-i-kto-vydayot-razreshenie-na-derevo", label: "Кто согласует технику и кто выдаёт разрешение на дерево" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -66,6 +77,7 @@ export default function Page() {
             зависит и то, кто согласует размещение техники, и то, нужно ли разрешение на работу рядом
             с деревьями.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W143} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -117,7 +129,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему статус ЗНОП — это не просто «есть деревья»</h2>
+        <h2 id="pochemu-status-znop-eto-ne-prosto-est-derevya">Почему статус ЗНОП — это не просто «есть деревья»</h2>
         <p>
           Закон Санкт-Петербурга от 08.10.2007 № 430-85 «О зелёных насаждениях общего пользования»
           устроен не как общее правило охраны природы, а как перечень: приложения к закону перечисляют
@@ -133,7 +145,7 @@ export default function Page() {
           и на практике это означает, что аккуратное обращение с деревьями и газоном на площадке — не
           факультативная вежливость, а требование закона на любом городском объекте.
         </p>
-        <h2>Кто согласует технику и кто выдаёт разрешение на дерево</h2>
+        <h2 id="kto-soglasuet-tehniku-i-kto-vydayot-razreshenie-na-derevo">Кто согласует технику и кто выдаёт разрешение на дерево</h2>
         <p>
           На территории ЗНОП, как и на любом городском объекте с зеленью, за каждым конкретным садом
           или сквером обычно закреплено собственное подведомственное учреждение — балансодержатель,

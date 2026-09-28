@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W129, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -77,9 +78,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-02";
+const artLd = articleLd({ headline: "Кран над трассой метро: спецификация подачи в Петербурге", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-kgiop-ili-stroyploschadki", label: "Почему это отдельный тип объекта, а не часть КГИОП или стройплощадки" },
+  { id: "zachem-metropoliten-v-peterburge-otnositsya-k-etomu-seryozno", label: "Зачем метрополитен в Петербурге относится к этому серьёзно" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -99,6 +110,7 @@ export default function Page() {
             и охранной зоне метрополитена требуют её согласования, независимо от того, что происходит
             на площадке сверху.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W129} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -146,7 +158,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это отдельный тип объекта, а не часть КГИОП или стройплощадки</h2>
+        <h2 id="pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-kgiop-ili-stroyploschadki">Почему это отдельный тип объекта, а не часть КГИОП или стройплощадки</h2>
         <p>
           У шести из семи прежних типов объектов ограничение держит кто-то на самой площадке: завод —
           на <Link href="/obekty/promzona/">промзоне</Link>, орган охраны памятников — на{" "}
@@ -160,7 +172,7 @@ export default function Page() {
           другое.
         </p>
 
-        <h2>Зачем метрополитен в Петербурге относится к этому серьёзно</h2>
+        <h2 id="zachem-metropoliten-v-peterburge-otnositsya-k-etomu-seryozno">Зачем метрополитен в Петербурге относится к этому серьёзно</h2>
         <p>
           Причина не в осторожности ради осторожности, а в истории самого метрополитена. Значительная
           часть линий строилась глубокого заложения именно из-за геологии города: неустойчивые

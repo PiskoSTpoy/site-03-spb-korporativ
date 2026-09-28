@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W83, PRICE, rub } from "../../site-data";
 
 /*
@@ -70,9 +71,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Красносельском районе", description, canonical, published });
+
+const toc = [
+  { id: "morskaya-milya-i-kinopark-dva-obekta-raznaya-vysota", label: "«Морская миля» и «Кинопарк»: два объекта, разная высота" },
+  { id: "pochemu-seychas-rayon-vpervye-poluchil-svoyu-stantsiyu-metro", label: "Почему сейчас: район впервые получил свою станцию метро" },
+  { id: "chto-eto-znachit-dlya-podachi-tehniki", label: "Что это значит для подачи техники" },
+  { id: "tsena-raboty-v-krasnoselskom-rayone", label: "Цена работы в Красносельском районе" },
+  { id: "chto-sprashivayut-pro-krasnoselskiy-rayon", label: "Что спрашивают про Красносельский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -99,6 +113,7 @@ export default function Page() {
             и благоустраивают территорию, заезд техники во двор закрывается навсегда — это прямое
             условие проекта обоих комплексов, а не наше предположение.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W83} toc={toc} />
         </div>
       </section>
 
@@ -120,7 +135,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>«Морская миля» и «Кинопарк»: два объекта, разная высота</h2>
+        <h2 id="morskaya-milya-i-kinopark-dva-obekta-raznaya-vysota">«Морская миля» и «Кинопарк»: два объекта, разная высота</h2>
         <p>ЖК «Морская миля» стоит на пересечении улицы Маршала Казакова и проспекта Маршала Жукова —
           10 корпусов по 25 этажей. На дату сверки корпуса 8, 9 и 10 сдаются в IV квартале 2026 года
           (237, 245 и 231 квартира соответственно), корпус 7 — в III квартале 2027 (246 квартир); корпуса
@@ -135,7 +150,7 @@ export default function Page() {
           целиком рассчитан на 3 048 квартир — то есть стройка растянется на годы, и на площадке ещё
           долго будет актуальна задача подачи техники к очередному корпусу.</p>
 
-        <h2>Почему сейчас: район впервые получил свою станцию метро</h2>
+        <h2 id="pochemu-seychas-rayon-vpervye-poluchil-svoyu-stantsiyu-metro">Почему сейчас: район впервые получил свою станцию метро</h2>
         <p>26 декабря 2025 года открылась станция «Юго-Западная» — первая станция метро в истории
           Красносельского района, где, по данным Петростата на начало 2025 года, проживает более
           440 тысяч человек (5-е место среди районов города). До этого момента ближайшей была
@@ -148,7 +163,7 @@ export default function Page() {
           используют в продаже квартир напрямую, и она же объясняет, почему именно сейчас в районе
           одновременно строится столько корпусов.</p>
 
-        <h2>Что это значит для подачи техники</h2>
+        <h2 id="chto-eto-znachit-dlya-podachi-tehniki">Что это значит для подачи техники</h2>
         <p>Главный практический момент — закрытые дворы. И «Морская миля», и «Кинопарк» проектируются
           с дворовыми территориями без машин: это стандарт комфорт-класса, а не временная мера на
           период стройки. Значит, окно, когда кран физически может зайти во двор, ограничено сроком
@@ -165,7 +180,7 @@ export default function Page() {
           <Link href="/park/xcmg-qy60k/">XCMG QY60K</Link>. Полная сводная таблица парка — в разделе{" "}
           <Link href="/park/">«Парк техники»</Link>.</p>
 
-        <h2>Цена работы в Красносельском районе</h2>
+        <h2 id="tsena-raboty-v-krasnoselskom-rayone">Цена работы в Красносельском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Плечо
           подачи до юго-западной окраины города считается по фактическому адресу корпуса и попадает
           в КП отдельной строкой; двор, который скоро закроют по графику благоустройства, — повод
@@ -175,7 +190,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Красносельский район</h2>
+          <h2 id="chto-sprashivayut-pro-krasnoselskiy-rayon">Что спрашивают про Красносельский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

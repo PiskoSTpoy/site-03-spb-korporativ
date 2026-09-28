@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W137, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -72,9 +73,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-09";
+const artLd = articleLd({ headline: "Автокран на гидротехническом сооружении: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-damba-kzs-ne-most-i-ne-promzona", label: "Почему дамба КЗС — не мост и не промзона" },
+  { id: "iz-chego-sostoit-kzs", label: "Из чего состоит КЗС" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -94,6 +105,7 @@ export default function Page() {
             так и для дорожного объекта, — и обе стороны у этого сооружения держит одно и то же
             предприятие, а не разные ведомства.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W137} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -142,7 +154,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему дамба КЗС — не мост и не промзона</h2>
+        <h2 id="pochemu-damba-kzs-ne-most-i-ne-promzona">Почему дамба КЗС — не мост и не промзона</h2>
         <p>
           На странице про <Link href="/obekty/most-i-puteprovod/">мост и путепровод</Link> ограничение
           одно: полоса отвода искусственного дорожного сооружения и правила его балансодержателя —
@@ -177,7 +189,7 @@ export default function Page() {
           части.
         </p>
 
-        <h2>Из чего состоит КЗС</h2>
+        <h2 id="iz-chego-sostoit-kzs">Из чего состоит КЗС</h2>
         <p>
           Комплекс защитных сооружений Санкт-Петербурга от наводнений — это дамба длиной порядка
           25,4 км, пересекающая Финский залив от порта Бронка на южном берегу через остров Котлин

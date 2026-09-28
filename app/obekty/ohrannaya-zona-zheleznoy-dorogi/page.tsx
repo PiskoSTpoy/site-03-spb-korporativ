@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W134, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -67,9 +68,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-07";
+const artLd = articleLd({ headline: "Кран у железнодорожных путей: спецификация подачи в охранной зоне", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-mosta-promzony-ili-lep", label: "Почему это отдельный тип объекта, а не часть моста, промзоны или ЛЭП" },
+  { id: "chto-reguliruet-soglasovanie-i-kuda-idyot-zayavka", label: "Что регулирует согласование и куда идёт заявка" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -93,6 +104,7 @@ export default function Page() {
             формально остаются обычным городским адресом, но при этом попадают в границы,
             где размещение техники и производство работ без согласования не допускаются.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W134} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -141,7 +153,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это отдельный тип объекта, а не часть моста, промзоны или ЛЭП</h2>
+        <h2 id="pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-mosta-promzony-ili-lep">Почему это отдельный тип объекта, а не часть моста, промзоны или ЛЭП</h2>
         <p>
           С мостом и путепроводом этот тип объекта путают чаще всего, потому что оба связаны
           с рельсовым или дорожным полотном. Разница в предмете: на{" "}
@@ -168,7 +180,7 @@ export default function Page() {
           а не постфактум, когда техника уже на площадке.
         </p>
 
-        <h2>Что регулирует согласование и куда идёт заявка</h2>
+        <h2 id="chto-reguliruet-soglasovanie-i-kuda-idyot-zayavka">Что регулирует согласование и куда идёт заявка</h2>
         <p>
           Действующая основа — статья 9 Федерального закона от 10.01.2003 № 17-ФЗ «О
           железнодорожном транспорте в Российской Федерации»: она вводит понятия полосы отвода

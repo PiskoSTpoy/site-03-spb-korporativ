@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W89, PRICE, rub } from "../../site-data";
 
 /*
@@ -62,9 +63,23 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Курортном районе", description, canonical, published });
+
+const toc = [
+  { id: "sestroretskiy-kurort-odna-ploschadka-dva-raznyh-sroka", label: "«Сестрорецкий курорт»: одна площадка, два разных срока" },
+  { id: "kurzal-ne-pamyatnik-no-ne-ryadovaya-stroyka", label: "Курзал: не памятник, но не рядовая стройка" },
+  { id: "chto-my-podnimaem-na-ploschadke-sanatoriya", label: "Что мы поднимаем на площадке санатория" },
+  { id: "odin-rayon-dva-raznyh-istoricheskih-profilya", label: "Один район — два разных исторических профиля" },
+  { id: "tsena-raboty-v-kurortnom-rayone", label: "Цена работы в Курортном районе" },
+  { id: "chto-sprashivayut-pro-kurortnyy-rayon", label: "Что спрашивают про Курортный район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -91,6 +106,7 @@ export default function Page() {
             не санаторий, а застройщик — тот же порядок, что и на любой стройплощадке до ввода
             в эксплуатацию, только с двумя параллельными графиками вместо одного.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W89} toc={toc} />
         </div>
       </section>
 
@@ -112,7 +128,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>«Сестрорецкий курорт»: одна площадка, два разных срока</h2>
+        <h2 id="sestroretskiy-kurort-odna-ploschadka-dva-raznyh-sroka">«Сестрорецкий курорт»: одна площадка, два разных срока</h2>
         <p>Группа ЛСР выкупила 87% санатория в 2021 году примерно за 1 млрд ₽, а в 2023-м закрыла
           главный корпус на реконструкцию. Общий объём инвестиций — свыше 13 млрд ₽: около 10 млрд ₽
           на новый Морской корпус (31 000 м² общей площади, 399 номеров на 11 800 м², медицинский блок
@@ -135,7 +151,7 @@ export default function Page() {
           чем называли ранние публикации 2025 года. Расхождение дат не устранено намеренно — обе
           версии и их источники приведены в разделе «Источники» ниже.</p>
 
-        <h2>Курзал: не памятник, но не рядовая стройка</h2>
+        <h2 id="kurzal-ne-pamyatnik-no-ne-ryadovaya-stroyka">Курзал: не памятник, но не рядовая стройка</h2>
         <p>Несмотря на историческое значение здания, по открытым данным объект официально не имел
           статуса памятника, а проект получил положительные заключения Комитета по градостроительству
           и архитектуры и КГИОП — без перехода в режим защитных зон по ст. 34.1 73-ФЗ. Это отличает
@@ -146,7 +162,7 @@ export default function Page() {
           спецификация — на странице <Link href="/obekty/stroyploshchadka-do-vvoda/">«Стройплощадка
           до ввода»</Link>, где график допуска ведёт застройщик, пока объект не сдан.</p>
 
-        <h2>Что мы поднимаем на площадке санатория</h2>
+        <h2 id="chto-my-podnimaem-na-ploschadke-sanatoriya">Что мы поднимаем на площадке санатория</h2>
         <p>Для монтажа конструкций Морского корпуса — крупного нового здания на 31 000 м² — обычно
           хватает среднего класса, <Link href="/park/xcmg-qy60k/">XCMG QY60K</Link>: подача материалов
           и монтаж конструкций по этапу стройки, без фиксированного годового графика допуска, как
@@ -157,7 +173,7 @@ export default function Page() {
           стройплощадке до ввода, точку установки и площадь опирания на конкретный выезд согласует
           застройщик, а не мы.</p>
 
-        <h2>Один район — два разных исторических профиля</h2>
+        <h2 id="odin-rayon-dva-raznyh-istoricheskih-profilya">Один район — два разных исторических профиля</h2>
         <p>Курортный район занимает северное побережье Финского залива и внутри себя неоднороден:
           список предприятий района исторически ведёт Сестрорецкий инструментальный завод,
           с которого начинался город Сестрорецк, — эту территорию мы намеренно не разбираем
@@ -167,7 +183,7 @@ export default function Page() {
           это означает то же, что и в <Link href="/geo/vyborgskiy/">Выборгском районе</Link>, —
           важен конкретный адрес и то, какой объект за ним стоит, а не общий профиль района.</p>
 
-        <h2>Цена работы в Курортном районе</h2>
+        <h2 id="tsena-raboty-v-kurortnom-rayone">Цена работы в Курортном районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>.
           Для площадки санатория отдельно закладываем время на согласование даты с застройщиком —
           у Морского корпуса и Курзала разные сроки сдачи и разные проектные команды, поэтому
@@ -179,7 +195,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Курортный район</h2>
+          <h2 id="chto-sprashivayut-pro-kurortnyy-rayon">Что спрашивают про Курортный район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

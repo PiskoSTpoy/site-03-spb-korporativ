@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W120, PRICE, rub } from "../../site-data";
 
 /*
@@ -56,9 +57,23 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Колпинском районе", description, canonical, published });
+
+const toc = [
+  { id: "promyshlennaya-ploschadka-pochti-v-tri-veka", label: "Промышленная площадка почти в три века" },
+  { id: "chto-my-delaem-na-ploschadke-takogo-masshtaba", label: "Что мы делаем на площадке такого масштаба" },
+  { id: "propusknoy-rezhim-i-izhorskiy-prud", label: "Пропускной режим и Ижорский пруд" },
+  { id: "zhilaya-zastroyka-i-vezd-so-storony-moskovskogo-shosse", label: "Жилая застройка и въезд со стороны Московского шоссе" },
+  { id: "tsena-raboty-v-kolpinskom-rayone", label: "Цена работы в Колпинском районе" },
+  { id: "chto-sprashivayut-pro-kolpinskiy-rayon", label: "Что спрашивают про Колпинский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -77,6 +92,7 @@ export default function Page() {
             25–40 т на жилых и коммерческих объектах — это единственный район сети, где заказчик
             по умолчанию промышленный, а не строительный или портовый.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W120} toc={toc} />
         </div>
       </section>
 
@@ -98,7 +114,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Промышленная площадка почти в три века</h2>
+        <h2 id="promyshlennaya-ploschadka-pochti-v-tri-veka">Промышленная площадка почти в три века</h2>
         <p>Ижорские заводы — одно из старейших промышленных предприятий России: площадка на реке
           Ижоре работает с 1722 года, когда завод был основан указом Петра I. Современная площадка
           входит в машиностроительный дивизион «Атомэнергомаш» госкорпорации «Росатом» и производит
@@ -107,7 +123,7 @@ export default function Page() {
           означает одно: район не «жилой» и не «строительный» по умолчанию, а промышленный, и заявка
           с этой территории почти всегда требует названия конкретного цеха.</p>
 
-        <h2>Что мы делаем на площадке такого масштаба</h2>
+        <h2 id="chto-my-delaem-na-ploschadke-takogo-masshtaba">Что мы делаем на площадке такого масштаба</h2>
         <p>Наш автокран не поднимает корпуса реакторов и крупногабаритные металлоконструкции самого
           производства — это отдельный класс техники и такелажа, которым занимается сам завод и его
           подрядчики по тяжёлому такелажу. Заявки, с которыми к нам приходят с территории Ижорских
@@ -119,7 +135,7 @@ export default function Page() {
           заехать туда, где асфальта нет. Разбор типовой промышленной подачи — в спецификации{" "}
           <Link href="/obekty/promzona/">«Промзона»</Link>.</p>
 
-        <h2>Пропускной режим и Ижорский пруд</h2>
+        <h2 id="propusknoy-rezhim-i-izhorskiy-prud">Пропускной режим и Ижорский пруд</h2>
         <p>Для работы на территории действующего предприятия оформляем допуск на технику и бригаду
           по правилам конкретного объекта — как и на других промышленных площадках города, единого
           стандарта для всех цехов и производств Ижорских заводов нет. Отдельная местная особенность —
@@ -127,14 +143,14 @@ export default function Page() {
           (ширина 200–300 м): часть маршрутов внутри района идёт в объезд пруда, и это стоит закладывать
           в план подачи так же заранее, как режимность самого предприятия.</p>
 
-        <h2>Жилая застройка и въезд со стороны Московского шоссе</h2>
+        <h2 id="zhilaya-zastroyka-i-vezd-so-storony-moskovskogo-shosse">Жилая застройка и въезд со стороны Московского шоссе</h2>
         <p>Помимо промышленной части, в районе есть жилые кварталы с типовыми для города задачами —
           капитальный ремонт фасадов, монтаж инженерного оборудования, разгрузка при реконструкции
           жилого фонда. Основной въезд в район со стороны исторического центра идёт по Московскому
           шоссе; для этих объектов пропускной режим ограничивается правилами управляющей организации
           или генподрядчика, а не предприятия.</p>
 
-        <h2>Цена работы в Колпинском районе</h2>
+        <h2 id="tsena-raboty-v-kolpinskom-rayone">Цена работы в Колпинском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>.
           Для промышленной площадки закладываем время на оформление допуска технике и бригаде;
           это уточняется на этапе заявки, вместе с точным названием цеха, а не по факту приезда
@@ -144,7 +160,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Колпинский район</h2>
+          <h2 id="chto-sprashivayut-pro-kolpinskiy-rayon">Что спрашивают про Колпинский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W144, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -86,9 +87,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-24";
+const artLd = articleLd({ headline: "Кран на площадке у КАД и ЗСД: спецификация подачи рядом со скоростной трассой", description, canonical, published });
+
+const toc = [
+  { id: "chem-eto-otlichaetsya-ot-mosta-i-puteprovoda", label: "Чем это отличается от моста и путепровода" },
+  { id: "pochemu-v-peterburge-otvet-zavisit-ot-uchastka-a-ne-ot-trassy", label: "Почему в Петербурге ответ зависит от участка, а не от трассы" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -109,6 +120,7 @@ export default function Page() {
             в её границах допускаются только по письменному согласованию владельца дороги
             с техническими требованиями.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W144} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -157,7 +169,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Чем это отличается от моста и путепровода</h2>
+        <h2 id="chem-eto-otlichaetsya-ot-mosta-i-puteprovoda">Чем это отличается от моста и путепровода</h2>
         <p>
           На сайте уже есть спецификация <Link href="/obekty/most-i-puteprovod/">моста и путепровода</Link>:
           там предмет работы — само искусственное дорожное сооружение, и кран подаётся с подхода
@@ -168,7 +180,7 @@ export default function Page() {
           стройка требует технических условий владельца.
         </p>
 
-        <h2>Почему в Петербурге ответ зависит от участка, а не от трассы</h2>
+        <h2 id="pochemu-v-peterburge-otvet-zavisit-ot-uchastka-a-ne-ot-trassy">Почему в Петербурге ответ зависит от участка, а не от трассы</h2>
         <p>
           Закон не устанавливает придорожные полосы для дорог в границах населённых пунктов.
           КАД и ЗСД проходят и через застроенные кварталы, и через промзоны, а КАД местами

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W85, MIN_SHIFT_HOURS, PRICE, rub } from "../../site-data";
 
 /*
@@ -80,9 +81,22 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в приаэродромной территории Пулково: проверяем высоту до подтверждения", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-ne-promzona-ne-stroyploschadka-i-ne-kgiop", label: "Почему это не промзона, не стройплощадка и не КГИОП" },
+  { id: "kak-ustroena-priaerodromnaya-territoriya-pulkovo", label: "Как устроена приаэродромная территория Пулково" },
+  { id: "nash-park-protiv-diapazona-limita", label: "Наш парк против диапазона лимита" },
+  { id: "chto-my-utochnyaem-po-kazhdomu-obektu", label: "Что мы уточняем по каждому объекту" },
+  { id: "tsena-i-chto-my-utochnyaem", label: "Цена и что мы уточняем" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -104,6 +118,7 @@ export default function Page() {
             независимо от того, что это за объект. Прежде чем назвать класс техники, мы сверяем отметку
             по конкретному сектору.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W85} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -150,7 +165,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это не промзона, не стройплощадка и не КГИОП</h2>
+        <h2 id="pochemu-eto-ne-promzona-ne-stroyploschadka-i-ne-kgiop">Почему это не промзона, не стройплощадка и не КГИОП</h2>
         <p>
           У остальных шести типов объектов ограничение всегда держит кто-то на самой площадке: завод —
           на <Link href="/obekty/promzona/">промзоне</Link>, управляющая компания — на{" "}
@@ -165,7 +180,7 @@ export default function Page() {
           территории.
         </p>
 
-        <h2>Как устроена приаэродромная территория Пулково</h2>
+        <h2 id="kak-ustroena-priaerodromnaya-territoriya-pulkovo">Как устроена приаэродромная территория Пулково</h2>
         <p>
           Действующая приаэродромная территория аэродрома Санкт-Петербург (Пулково) установлена приказом
           Росавиации от 24.12.2024 № 1161-П (зарегистрирован Минюстом России 31.01.2025, № 81110) — он
@@ -188,7 +203,7 @@ export default function Page() {
           отдельно в разделе <Link href="/geo/">«География»</Link>.
         </p>
 
-        <h2>Наш парк против диапазона лимита</h2>
+        <h2 id="nash-park-protiv-diapazona-limita">Наш парк против диапазона лимита</h2>
         <p>
           Разброс отметок по подзонам — от полного запрета до сотен метров — означает, что ни один класс
           техники не проходит везде автоматически. Самая высокая машина парка,{" "}
@@ -200,7 +215,7 @@ export default function Page() {
           высоту по адресу, и только потом подбираем машину, которая физически не может её превысить.
         </p>
 
-        <h2>Что мы уточняем по каждому объекту</h2>
+        <h2 id="chto-my-utochnyaem-po-kazhdomu-obektu">Что мы уточняем по каждому объекту</h2>
         <p>
           Первый вопрос по заявке в этой территории — не марка и вес груза, а точный адрес и высотная
           отметка монтажа. По ним определяется подзона и сектор, а вместе с ними — предельная высота,
@@ -210,7 +225,7 @@ export default function Page() {
           объектов, и закладываем его в срок выезда заранее, а не по факту отказа в подаче.
         </p>
 
-        <h2>Цена и что мы уточняем</h2>
+        <h2 id="tsena-i-chto-my-utochnyaem">Цена и что мы уточняем</h2>
         <p>Ставка зависит от класса техники, а не от того, что объект лежит в приаэродромной территории —
           отдельной наценки «за высотный лимит» в прайсе нет, см. <Link href="/#price">прайс-лист</Link>.
           Требования типа объекта под территорией (стройплощадка, промзона, склад, порт) складываются

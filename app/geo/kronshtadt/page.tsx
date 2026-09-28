@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, PRICE, rub } from "../../site-data";
 
 /*
@@ -42,9 +43,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Кронштадте", description, canonical, published });
+
+const toc = [
+  { id: "logistika-po-dambe", label: "Логистика по дамбе" },
+  { id: "ostrov-krepost-ohrannyy-status-i-grunty", label: "Остров-крепость: охранный статус и грунты" },
+  { id: "kakie-zadachi-chasche-vsego-zakazyvayut", label: "Какие задачи чаще всего заказывают" },
+  { id: "tsena-raboty-v-kronshtadte", label: "Цена работы в Кронштадте" },
+  { id: "chto-sprashivayut-pro-kronshtadt", label: "Что спрашивают про Кронштадт" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -70,6 +84,7 @@ export default function Page() {
             от {rub(PRICE[0].rate)}/час без НДС, а разница за остров ложится не в наценку за район,
             а в плечо подачи, которое считается по факту.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
       </section>
 
@@ -91,7 +106,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Логистика по дамбе</h2>
+        <h2 id="logistika-po-dambe">Логистика по дамбе</h2>
         <p>Комплекс защитных сооружений — протяжённое гидротехническое сооружение длиной порядка
           25,4 км, включающее 11 дамб и 2 судопропускных сооружения для прохода судов между Невской
           губой и заливом; по гребню проходит шестиполосный участок кольцевой автодороги. Дамба
@@ -104,7 +119,7 @@ export default function Page() {
           с раннего утра машину разумнее подать накануне и согласовать её нахождение на объекте,
           чем закладывать ночной перегон по единственной дороге.</p>
 
-        <h2>Остров-крепость: охранный статус и грунты</h2>
+        <h2 id="ostrov-krepost-ohrannyy-status-i-grunty">Остров-крепость: охранный статус и грунты</h2>
         <p>Кронштадт исторически формировался как военно-морская крепость на острове Котлин, поэтому
           доля объектов с историческим или охранным статусом здесь заметно выше, чем в материковых
           промышленных районах. Практически это означает то же, что и в центре: подъезд и точку
@@ -116,14 +131,14 @@ export default function Page() {
           площадки под выносные опоры оцениваем на месте перед установкой техники, а не полагаемся
           на визуально ровное покрытие.</p>
 
-        <h2>Какие задачи чаще всего заказывают</h2>
+        <h2 id="kakie-zadachi-chasche-vsego-zakazyvayut">Какие задачи чаще всего заказывают</h2>
         <p>Капитальный ремонт исторических зданий и фортификационных сооружений, монтаж инженерного
           оборудования в жилых кварталах, работы, связанные с портовой и судоремонтной инфраструктурой
           острова. Для объектов с охранным статусом разрешительную часть — задание, разрешение,
           согласованную проектную документацию — получает заказчик или его технический заказчик;
           наша зона ответственности начинается с подъезда, точки установки и маршрута.</p>
 
-        <h2>Цена работы в Кронштадте</h2>
+        <h2 id="tsena-raboty-v-kronshtadte">Цена работы в Кронштадте</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>.
           Логистическое плечо по дамбе больше, чем для материковых районов, поэтому подача считается
           по фактическому расстоянию и с учётом обстановки на маршруте — отдельной строкой в КП,
@@ -133,7 +148,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Кронштадт</h2>
+          <h2 id="chto-sprashivayut-pro-kronshtadt">Что спрашивают про Кронштадт</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

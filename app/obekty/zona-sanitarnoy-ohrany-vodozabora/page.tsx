@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W139, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -84,9 +85,20 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-11";
+const artLd = articleLd({ headline: "Кран у водозабора: спецификация подачи в зоне санитарной охраны", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-poyasa-a-ne-odin-perimetr", label: "Почему пояса, а не один периметр" },
+  { id: "chem-eto-otlichaetsya-ot-naberezhnoy-i-vodoohrannoy-zony", label: "Чем это отличается от набережной и водоохранной зоны" },
+  { id: "kakie-vodozabory-formiruyut-etot-tip-obekta-v-peterburge", label: "Какие водозаборы формируют этот тип объекта в Петербурге" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -107,6 +119,7 @@ export default function Page() {
             любая другая городская площадка. Ограничивает не собственник соседнего участка, а санитарный
             режим источника питьевой воды для города.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W139} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -157,7 +170,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему пояса, а не один периметр</h2>
+        <h2 id="pochemu-poyasa-a-ne-odin-perimetr">Почему пояса, а не один периметр</h2>
         <p>
           У большинства уже описанных типов объектов граница одна: ограда промзоны,
           защитная зона памятника, полоса отвода железной дороги. У зоны санитарной
@@ -174,7 +187,7 @@ export default function Page() {
           это меняет не тоннаж, а саму возможность работать без отдельного согласования.
         </p>
 
-        <h2>Чем это отличается от набережной и водоохранной зоны</h2>
+        <h2 id="chem-eto-otlichaetsya-ot-naberezhnoy-i-vodoohrannoy-zony">Чем это отличается от набережной и водоохранной зоны</h2>
         <p>
           Тему легко спутать с уже описанной <Link href="/obekty/naberezhnaya-i-vodoohrannaya-zona/">
           набережной и водоохранной зоной</Link> — обе связаны с водой и с одной и той же статьёй
@@ -193,7 +206,7 @@ export default function Page() {
           тем же принципом, что уже описан для набережной и объекта под охраной КГИОП.
         </p>
 
-        <h2>Какие водозаборы формируют этот тип объекта в Петербурге</h2>
+        <h2 id="kakie-vodozabory-formiruyut-etot-tip-obekta-v-peterburge">Какие водозаборы формируют этот тип объекта в Петербурге</h2>
         <p>
           Источник питьевого водоснабжения города один — река Нева, но точек забора и станций
           водоподготовки несколько, и они распределены по городу неравномерно. Крупный пример —

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W53 } from "../../site-data";
 
 /*
@@ -43,9 +44,22 @@ const breadcrumbLd = {
   ],
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Штрафы, пеня и расторжение контракта: размер и порядок", description, canonical, published });
+
+const toc = [
+  { id: "penya-za-prosrochku", label: "Пеня за просрочку" },
+  { id: "shtraf-za-nenadlezhaschee-ispolnenie-protsenty-po-postanovleniyu-1042", label: "Штраф за ненадлежащее исполнение: проценты по Постановлению № 1042" },
+  { id: "osobye-stavki-smp-sonko-i-subpodryadchiki", label: "Особые ставки: СМП, СОНКО и субподрядчики" },
+  { id: "odnostoronnee-rastorzhenie-10-dney-na-ustranenie", label: "Одностороннее расторжение: 10 дней на устранение" },
+  { id: "chto-eto-znachit-dlya-nashego-kp", label: "Что это значит для нашего КП" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="crumbs wrap" aria-label="Хлебные крошки">
@@ -65,6 +79,7 @@ export default function Page() {
             случаях контракт расторгают в одностороннем порядке. Ниже точные проценты по Постановлению Правительства РФ № 1042, а не общее
             «предусмотрены штрафные санкции».
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W53} toc={toc} />
         </div>
         <PrintButton label="Распечатать раздел про ответственность" />
       </section>
@@ -72,7 +87,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="penya">
         <div className="section-head">
           <span className="eyebrow">Раздел 01</span>
-          <h2>Пеня за просрочку</h2>
+          <h2 id="penya-za-prosrochku">Пеня за просрочку</h2>
           <p>Начисляется за каждый день просрочки исполнения обязательства — отдельно от штрафа
             за сам факт нарушения, и оба взыскания не исключают друг друга.</p>
         </div>
@@ -92,7 +107,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="shtraf">
         <div className="section-head">
           <span className="eyebrow">Раздел 02</span>
-          <h2>Штраф за ненадлежащее исполнение: проценты по Постановлению № 1042</h2>
+          <h2 id="shtraf-za-nenadlezhaschee-ispolnenie-protsenty-po-postanovleniyu-1042">Штраф за ненадлежащее исполнение: проценты по Постановлению № 1042</h2>
           <p>В отличие от пени, штраф — фиксированный процент от цены контракта, не зависящий
             от числа дней. Размер задаёт не заказчик по своему усмотрению, а таблица порогов
             из Постановления Правительства РФ от 30.08.2017 № 1042.</p>
@@ -127,7 +142,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="smp">
         <div className="section-head">
           <span className="eyebrow">Раздел 03</span>
-          <h2>Особые ставки: СМП, СОНКО и субподрядчики</h2>
+          <h2 id="osobye-stavki-smp-sonko-i-subpodryadchiki">Особые ставки: СМП, СОНКО и субподрядчики</h2>
         </div>
         <div className="dtable-scroll">
           <table className="dtable">
@@ -149,7 +164,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="rastorzhenie">
         <div className="section-head">
           <span className="eyebrow">Раздел 04</span>
-          <h2>Одностороннее расторжение: 10 дней на устранение</h2>
+          <h2 id="odnostoronnee-rastorzhenie-10-dney-na-ustranenie">Одностороннее расторжение: 10 дней на устранение</h2>
           <p>Решение заказчика отказаться от контракта в одностороннем порядке не действует
             мгновенно — закон прямо даёт исполнителю окно на исправление ситуации.</p>
         </div>
@@ -164,7 +179,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="praktika">
         <div className="section-head">
           <span className="eyebrow">Раздел 05</span>
-          <h2>Что это значит для нашего КП</h2>
+          <h2 id="chto-eto-znachit-dlya-nashego-kp">Что это значит для нашего КП</h2>
         </div>
         <p className="price-note">
           Срок подачи техники и минимальная смена — не декларативные цифры, а параметры, от которых

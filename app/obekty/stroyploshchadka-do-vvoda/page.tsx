@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W84, PRICE, rub } from "../../site-data";
 
 /*
@@ -74,9 +75,22 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран на стройплощадку до ввода в эксплуатацию", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-ne-promzona-ne-sklad-i-ne-obekt-pod-ohranoy", label: "Почему это не промзона, не склад и не объект под охраной" },
+  { id: "dva-nezavisimyh-primera-kommercheskiy-i-gosudarstvennyy", label: "Два независимых примера — коммерческий и государственный" },
+  { id: "klass-tehniki-ot-odnogo-etazha-do-polnotsennogo-karkasa", label: "Класс техники: от одного этажа до полноценного каркаса" },
+  { id: "chto-my-utochnyaem-po-kazhdomu-obektu", label: "Что мы уточняем по каждому объекту" },
+  { id: "tsena-i-chto-my-utochnyaem", label: "Цена и что мы уточняем" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -97,6 +111,7 @@ export default function Page() {
             отдельный, шестой профиль объекта в нашей спецификации — и мы убедились, что он не
             привязан к одной компании или одному сектору.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W84} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -143,7 +158,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это не промзона, не склад и не объект под охраной</h2>
+        <h2 id="pochemu-eto-ne-promzona-ne-sklad-i-ne-obekt-pod-ohranoy">Почему это не промзона, не склад и не объект под охраной</h2>
         <p>
           У остальных пяти типов объектов в этой спецификации всегда есть тот, кто уже управляет
           площадкой: завод задаёт пропускной режим на <Link href="/obekty/promzona/">«Промзоне»</Link>,
@@ -156,7 +171,7 @@ export default function Page() {
           сам определяет темп и не обязан публиковать его заранее.
         </p>
 
-        <h2>Два независимых примера — коммерческий и государственный</h2>
+        <h2 id="dva-nezavisimyh-primera-kommercheskiy-i-gosudarstvennyy">Два независимых примера — коммерческий и государственный</h2>
         <p>
           Первый пример — застройка формата Build-to-Suit на набережной Волковки в{" "}
           <Link href="/geo/frunzenskiy/">Фрунзенском районе</Link>: девелопер полного цикла «БРИЗ» строит
@@ -177,7 +192,7 @@ export default function Page() {
           площадки в городе.
         </p>
 
-        <h2>Класс техники: от одного этажа до полноценного каркаса</h2>
+        <h2 id="klass-tehniki-ot-odnogo-etazha-do-polnotsennogo-karkasa">Класс техники: от одного этажа до полноценного каркаса</h2>
         <p>
           BTS-объект на Волковке — как правило, одноэтажная промышленно-складская коробка высотой
           потолков до 6 м: здесь для доставки и монтажа конструкций обычно достаточно среднего класса,{" "}
@@ -189,7 +204,7 @@ export default function Page() {
           — в разделе <Link href="/park/">«Парк техники»</Link>.
         </p>
 
-        <h2>Что мы уточняем по каждому объекту</h2>
+        <h2 id="chto-my-utochnyaem-po-kazhdomu-obektu">Что мы уточняем по каждому объекту</h2>
         <p>
           На стройплощадке до ввода мы в первую очередь спрашиваем не адрес и не название здания, а
           контакт проектного офиса генподрядчика и текущий этап стройки — он определяет, какая машина
@@ -199,7 +214,7 @@ export default function Page() {
           на каждый выезд заново, а не один раз на весь проект.
         </p>
 
-        <h2>Цена и что мы уточняем</h2>
+        <h2 id="tsena-i-chto-my-utochnyaem">Цена и что мы уточняем</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Для
           выезда на стройплощадку до ввода отдельно закладываем время на согласование даты с проектным
           офисом — у него нет фиксированного годового графика допуска, как у уже введённого объекта.

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W84, PRICE, rub } from "../../site-data";
 
 /*
@@ -73,9 +74,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Центральном районе", description, canonical, published });
+
+const toc = [
+  { id: "ligovskiy-prospekt-52-ne-pamyatnik-a-obychnaya-postroyka-1982-goda", label: "Лиговский проспект, 52: не памятник, а обычная постройка 1982 года" },
+  { id: "pochemu-v-tsentre-stroyka-chasche-pro-metro-chem-pro-zavod", label: "Почему в центре стройка чаще про метро, чем про завод" },
+  { id: "chto-eto-znachit-dlya-tehniki-kotoraya-rabotaet-v-etih-zdaniyah-seychas", label: "Что это значит для техники, которая работает в этих зданиях сейчас" },
+  { id: "tsena-raboty-v-tsentralnom-rayone", label: "Цена работы в Центральном районе" },
+  { id: "chto-sprashivayut-pro-tsentralnyy-rayon", label: "Что спрашивают про Центральный район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -94,6 +108,7 @@ export default function Page() {
             стадию оценки под городской инфраструктурный проект: не музейный экспонат, а рядовое здание
             1982 года постройки.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W84} toc={toc} />
         </div>
       </section>
 
@@ -115,7 +130,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Лиговский проспект, 52: не памятник, а обычная постройка 1982 года</h2>
+        <h2 id="ligovskiy-prospekt-52-ne-pamyatnik-a-obychnaya-postroyka-1982-goda">Лиговский проспект, 52: не памятник, а обычная постройка 1982 года</h2>
         <p>ООО «Метропроект» — структура АО «Метрострой Северной столицы» — заказало оценку рыночной
           стоимости недвижимости для образования земельных участков под будущее изъятие: город готовит
           второй выход станции метро «Лиговский проспект». В границы предполагаемого изъятия попадают
@@ -137,7 +152,7 @@ export default function Page() {
           она в текущем состоянии, согласует собственник или арендатор здания, а не орган охраны
           памятников.</p>
 
-        <h2>Почему в центре стройка чаще про метро, чем про завод</h2>
+        <h2 id="pochemu-v-tsentre-stroyka-chasche-pro-metro-chem-pro-zavod">Почему в центре стройка чаще про метро, чем про завод</h2>
         <p>Центральный район образован в 1994 году объединением территорий бывших Дзержинского,
           Куйбышевского и Смольнинского районов и сегодня обслуживается 11 станциями метро — больше, чем
           у любого другого района сети. При этом строительство новых промышленных предприятий в границах
@@ -148,7 +163,7 @@ export default function Page() {
           Дом 52 на Лиговском проспекте относится к муниципальному округу «Лиговка-Ямская», одному из
           шести округов района.</p>
 
-        <h2>Что это значит для техники, которая работает в этих зданиях сейчас</h2>
+        <h2 id="chto-eto-znachit-dlya-tehniki-kotoraya-rabotaet-v-etih-zdaniyah-seychas">Что это значит для техники, которая работает в этих зданиях сейчас</h2>
         <p>Пока формальный статус изъятия не утверждён, бизнес-центр и склады на Лиговском, 52, продолжают
           работать в обычном режиме — с арендаторами вроде клиники «Счастливый взгляд». Для подрядчика
           с краном это означает то же, что и для любого рядового здания в центре: класс техники{" "}
@@ -160,7 +175,7 @@ export default function Page() {
           в дальнейшем сменится собственник или начнётся демонтаж под инфраструктурный проект — это
           отдельная спецификация допуска, которую уточняем на момент заявки, а не заранее.</p>
 
-        <h2>Цена работы в Центральном районе</h2>
+        <h2 id="tsena-raboty-v-tsentralnom-rayone">Цена работы в Центральном районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Отдельной
           наценки «за исторический центр» в прайсе нет ни для памятника, ни для рядовой постройки —
           разница только в том, какую справку и какое согласование мы просим у заказчика до выезда.
@@ -171,7 +186,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Центральный район</h2>
+          <h2 id="chto-sprashivayut-pro-tsentralnyy-rayon">Что спрашивают про Центральный район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

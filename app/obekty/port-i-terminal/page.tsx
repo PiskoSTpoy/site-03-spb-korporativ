@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 const title = "Кран на портовый терминал: спецификация подачи 80–130 тонн";
@@ -48,9 +49,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран на портовый терминал: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-dopusk-oformlyaetsya-v-terminal-a-ne-v-port", label: "Почему допуск оформляется в терминал, а не «в порт»" },
+  { id: "chto-reshaet-na-prichale-vmesto-grunta", label: "Что решает на причале вместо грунта" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -69,6 +80,7 @@ export default function Page() {
             поэтому спецификация ниже — это то, что одинаково для любого терминала, плюс перечень того,
             что мы уточняем по названию конкретного.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -121,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему допуск оформляется в терминал, а не «в порт»</h2>
+        <h2 id="pochemu-dopusk-oformlyaetsya-v-terminal-a-ne-v-port">Почему допуск оформляется в терминал, а не «в порт»</h2>
         <p>
           Разница не в строгости охраны, а в правовом основании. Терминал — объект транспортной
           инфраструктуры, и въезд идёт в его зону транспортной безопасности. Общая для всех терминалов
@@ -144,7 +156,7 @@ export default function Page() {
           со сроками и основаниями — на странице <Link href="/documents/">«Допуски и документы»</Link>.
         </p>
 
-        <h2>Что решает на причале вместо грунта</h2>
+        <h2 id="chto-reshaet-na-prichale-vmesto-grunta">Что решает на причале вместо грунта</h2>
         <p>
           На городской стройке первый вопрос — выдержит ли основание. На терминале основание, как правило,
           рассчитано на портовую технику, и вопрос смещается: что находится под покрытием в точке, куда

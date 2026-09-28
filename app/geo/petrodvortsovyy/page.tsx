@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, PRICE, rub } from "../../site-data";
 
 /*
@@ -52,9 +53,20 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Петродворцовом районе", description, canonical, published });
+
+const toc = [
+  { id: "chem-bronka-otlichaetsya-ot-ostalnyh-ploschadok-porta", label: "Чем «Бронка» отличается от остальных площадок порта" },
+  { id: "plecho-podachi-pochemu-eto-otdelnaya-stroka-v-kp", label: "Плечо подачи: почему это отдельная строка в КП" },
+  { id: "chto-sprashivayut-pro-petrodvortsovyy-rayon", label: "Что спрашивают про Петродворцовый район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -81,6 +93,7 @@ export default function Page() {
             режиму доступа здесь добавляется самое длинное плечо подачи техники по городу —
             подача считается по факту и идёт в КП отдельной строкой.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
       </section>
 
@@ -102,7 +115,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Чем «Бронка» отличается от остальных площадок порта</h2>
+        <h2 id="chem-bronka-otlichaetsya-ot-ostalnyh-ploschadok-porta">Чем «Бронка» отличается от остальных площадок порта</h2>
         <p>
           Это единственный терминал Большого порта Санкт-Петербург, способный принимать суда длиной
           до 347 метров, шириной до 50 метров и осадкой до 13 метров. Комплекс работает с декабря 2015 года
@@ -120,7 +133,7 @@ export default function Page() {
           на терминал — в разделе <Link href="/obekty/port-i-terminal/">«Порт и терминал»</Link>.
         </p>
 
-        <h2>Плечо подачи: почему это отдельная строка в КП</h2>
+        <h2 id="plecho-podachi-pochemu-eto-otdelnaya-stroka-v-kp">Плечо подачи: почему это отдельная строка в КП</h2>
         <p>
           Расстояние от точки базирования техники до Ломоносова заметно больше, чем до любого другого
           из районов, где мы работаем, и обходного варианта нет — маршрут один, по южному берегу.
@@ -139,7 +152,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Петродворцовый район</h2>
+          <h2 id="chto-sprashivayut-pro-petrodvortsovyy-rayon">Что спрашивают про Петродворцовый район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

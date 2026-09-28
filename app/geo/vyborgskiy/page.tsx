@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W88, PRICE, rub } from "../../site-data";
 
 /*
@@ -63,9 +64,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Выборгском районе", description, canonical, published });
+
+const toc = [
+  { id: "tehnopark-l618-stroyka-v-neskolko-ocheredey", label: "Технопарк L618 — стройка в несколько очередей" },
+  { id: "chto-my-podnimaem-na-stroyke-tehnoparka", label: "Что мы поднимаем на стройке технопарка" },
+  { id: "odin-rayon-dve-raznye-zony-raznyy-profil", label: "Один район — две разные зоны, разный профиль" },
+  { id: "tsena-raboty-v-vyborgskom-rayone", label: "Цена работы в Выборгском районе" },
+  { id: "chto-sprashivayut-pro-vyborgskiy-rayon", label: "Что спрашивают про Выборгский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -84,6 +98,7 @@ export default function Page() {
             а класс техники определяет не тоннаж, а этап работ — от монтажа каркаса производственного
             корпуса до подачи оборудования резидентам после ввода в эксплуатацию.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W88} toc={toc} />
         </div>
       </section>
 
@@ -105,7 +120,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Технопарк L618 — стройка в несколько очередей</h2>
+        <h2 id="tehnopark-l618-stroyka-v-neskolko-ocheredey">Технопарк L618 — стройка в несколько очередей</h2>
         <p>УК «Бриз» строит на Литовской улице, 16Б, у метро «Выборгская», многофункциональный технопарк
           L618 (в части публикаций встречается как «1618» или «I618» — один и тот же комплекс, разное
           написание индекса в разных изданиях): компактные помещения для стартапов от 50 м², крупные
@@ -129,7 +144,7 @@ export default function Page() {
           стратегических задач города. Формально проект реализуется в рамках национального проекта
           «Эффективная и конкурентная экономика», действующего с 2025 года.</p>
 
-        <h2>Что мы поднимаем на стройке технопарка</h2>
+        <h2 id="chto-my-podnimaem-na-stroyke-tehnoparka">Что мы поднимаем на стройке технопарка</h2>
         <p>Пока L618 строится, у крана здесь задачи стройплощадки, а не уже действующего объекта: монтаж
           каркаса и кровельных конструкций производственного корпуса, разгрузка крупногабаритных
           металлоконструкций, подача инженерного оборудования на этапе, когда постоянного пропускного
@@ -144,7 +159,7 @@ export default function Page() {
           сменится на тот же, что уже описан для действующего технопарка, — см.{" "}
           <Link href="/obekty/sklad-i-tehnopark/">«Склад и технопарк»</Link>.</p>
 
-        <h2>Один район — две разные зоны, разный профиль</h2>
+        <h2 id="odin-rayon-dve-raznye-zony-raznyy-profil">Один район — две разные зоны, разный профиль</h2>
         <p>Выборгский район занимает северную часть города и внутри себя неоднороден: на севере, в
           промзоне «Парнас», сосредоточены действующие предприятия с давней историей военно-промышленного
           профиля — эту территорию мы намеренно не разбираем и техникой к ней не привязываемся. Стройка
@@ -154,7 +169,7 @@ export default function Page() {
           как и в <Link href="/geo/krasnogvardeyskiy/">Красногвардейском районе</Link>, где рядом с уже
           открытым технопарком IndustrialHUB тоже работают действующие производства другого профиля.</p>
 
-        <h2>Цена работы в Выборгском районе</h2>
+        <h2 id="tsena-raboty-v-vyborgskom-rayone">Цена работы в Выборгском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Для
           стройплощадки L618 отдельно закладываем время на согласование даты с проектным офисом
           генподрядчика — фиксированного годового графика допуска, как на уже введённом объекте, здесь
@@ -164,7 +179,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Выборгский район</h2>
+          <h2 id="chto-sprashivayut-pro-vyborgskiy-rayon">Что спрашивают про Выборгский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

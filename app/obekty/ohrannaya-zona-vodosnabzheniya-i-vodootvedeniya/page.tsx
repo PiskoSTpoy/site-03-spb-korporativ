@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W142, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -116,9 +117,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-17";
+const artLd = articleLd({ headline: "Кран у водопровода и канализации: спецификация подачи в охранной зоне сети", description, canonical, published });
+
+const toc = [
+  { id: "chem-eto-otlichaetsya-ot-zony-sanitarnoy-ohrany-vodozabora-i-vodoohrannoy-zony", label: "Чем это отличается от зоны санитарной охраны водозабора и водоохранной зоны" },
+  { id: "pochemu-podzemnaya-set-ne-to-zhe-samoe-chto-ohrannaya-zona-inzhenernyh-setey-kotorye-uzhe-opisany", label: "Почему подземная сеть — не то же самое, что охранная зона инженерных сетей, которые уже описаны" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -138,6 +149,7 @@ export default function Page() {
             с эксплуатирующей организацией не допускаются — независимо от того, что происходит
             на самой площадке: обычный двор, промзона или территория под охраной КГИОП.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W142} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -186,7 +198,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Чем это отличается от зоны санитарной охраны водозабора и водоохранной зоны</h2>
+        <h2 id="chem-eto-otlichaetsya-ot-zony-sanitarnoy-ohrany-vodozabora-i-vodoohrannoy-zony">Чем это отличается от зоны санитарной охраны водозабора и водоохранной зоны</h2>
         <p>
           На сайте уже опубликованы два других типа объекта, в названии которых тоже есть слово
           «вода», и их легко перепутать. <Link href="/obekty/zona-sanitarnoy-ohrany-vodozabora/">Зона
@@ -203,7 +215,7 @@ export default function Page() {
           все сразу, а могут не пересечься ни разу.
         </p>
 
-        <h2>Почему подземная сеть — не то же самое, что охранная зона инженерных сетей, которые уже описаны</h2>
+        <h2 id="pochemu-podzemnaya-set-ne-to-zhe-samoe-chto-ohrannaya-zona-inzhenernyh-setey-kotorye-uzhe-opisany">Почему подземная сеть — не то же самое, что охранная зона инженерных сетей, которые уже описаны</h2>
         <p>
           По форме ограничение здесь устроено так же, как на уже опубликованных охранных зонах
           тепловых сетей, газопровода, ЛЭП, линии связи и железной дороги: узкий коридор вдоль

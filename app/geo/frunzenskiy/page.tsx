@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W82, PRICE, rub } from "../../site-data";
 
 /*
@@ -68,9 +69,22 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран во Фрунзенском районе", description, canonical, published });
+
+const toc = [
+  { id: "naberezhnaya-volkovki-dva-obekta-pod-tehnicheskoe-zadanie-zakazchika", label: "Набережная Волковки: два объекта под техническое задание заказчика" },
+  { id: "poka-obekt-stroitsya-dopusk-opredelyaet-developer-a-ne-rezident", label: "Пока объект строится, допуск определяет девелопер, а не резидент" },
+  { id: "yuzhnee-obvodnogo-kanala-rayon-s-promyshlennym-profilem", label: "Южнее Обводного канала: район с промышленным профилем" },
+  { id: "tsena-raboty-vo-frunzenskom-rayone", label: "Цена работы во Фрунзенском районе" },
+  { id: "chto-sprashivayut-pro-frunzenskiy-rayon", label: "Что спрашивают про Фрунзенский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -97,6 +111,7 @@ export default function Page() {
             на технику согласовывает не будущий резидент, а проектный офис девелопера полного цикла —
             и это меняет то, с кем мы держим график подачи крана.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W82} toc={toc} />
         </div>
       </section>
 
@@ -118,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Набережная Волковки: два объекта под техническое задание заказчика</h2>
+        <h2 id="naberezhnaya-volkovki-dva-obekta-pod-tehnicheskoe-zadanie-zakazchika">Набережная Волковки: два объекта под техническое задание заказчика</h2>
         <p>Девелопер «БРИЗ» строит на набережной реки Волковки сразу две площадки формата
           Build-to-Suit. Волковка 17 (наб. реки Волковки, 17) — объект от 20 000 м² под одним контуром,
           рядом со станцией метро «Обводный канал»; пример конфигурации на площадке — лот B17.1 (те же
@@ -137,7 +152,7 @@ export default function Page() {
           потолков — то есть именно тот параметр площадки, от которого зависит класс крана, который мы
           подбираем под задачу.</p>
 
-        <h2>Пока объект строится, допуск определяет девелопер, а не резидент</h2>
+        <h2 id="poka-obekt-stroitsya-dopusk-opredelyaet-developer-a-ne-rezident">Пока объект строится, допуск определяет девелопер, а не резидент</h2>
         <p>Модель «единый контур от брифа до ввода» означает, что «БРИЗ» сам проектирует, строит и
           после запуска эксплуатирует объект собственной управляющей компанией — без посредников на
           каждом отдельном этапе. Для подрядчика на площадке, включая нас, это значит одну практическую
@@ -151,7 +166,7 @@ export default function Page() {
           оборудования после ввода объекта закрывает{" "}
           <Link href="/park/sany-stc400t/">SANY STC400T</Link>.</p>
 
-        <h2>Южнее Обводного канала: район с промышленным профилем</h2>
+        <h2 id="yuzhnee-obvodnogo-kanala-rayon-s-promyshlennym-profilem">Южнее Обводного канала: район с промышленным профилем</h2>
         <p>Современный Фрунзенский район лежит южнее Обводного канала, который до середины XIX века
           считался южной границей города, — на картах той эпохи будущий район значился как «Каретная
           часть». Сегодня ведущее место в экономике района занимает промышленный комплекс: на долю
@@ -159,7 +174,7 @@ export default function Page() {
           проект, а системная специализация территории, и именно поэтому здесь продолжают строить новые
           производственные площадки, а не только жильё.</p>
 
-        <h2>Цена работы во Фрунзенском районе</h2>
+        <h2 id="tsena-raboty-vo-frunzenskom-rayone">Цена работы во Фрунзенском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>. Для
           площадки, которая ещё строится, закладываем время на согласование графика с проектным офисом
           девелопера — он ведёт объект по собственному расписанию этапов и не публикует его заранее.</p>
@@ -168,7 +183,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Фрунзенский район</h2>
+          <h2 id="chto-sprashivayut-pro-frunzenskiy-rayon">Что спрашивают про Фрунзенский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

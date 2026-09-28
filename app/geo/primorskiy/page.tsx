@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, PRICE, rub } from "../../site-data";
 
 /*
@@ -43,9 +44,23 @@ const breadcrumbLd = {
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран в Приморском районе", description, canonical, published });
+
+const toc = [
+  { id: "yuntolovo-masshtab-novoy-zastroyki", label: "Юнтолово — масштаб новой застройки" },
+  { id: "zona-u-lahta-tsentra", label: "Зона у Лахта Центра" },
+  { id: "pribrezhnaya-nizmennost-i-namyvnye-uchastki", label: "Прибрежная низменность и намывные участки" },
+  { id: "komendantskiy-aerodrom-bolee-staraya-zastroyka", label: "Комендантский аэродром — более старая застройка" },
+  { id: "tsena-raboty-v-primorskom-rayone", label: "Цена работы в Приморском районе" },
+  { id: "chto-sprashivayut-pro-primorskiy-rayon", label: "Что спрашивают про Приморский район" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
@@ -71,6 +86,7 @@ export default function Page() {
             к конкретному корпусу, а не к району: рядом Лахта и Ольгино у Лахта Центра
             и более старая застройка Комендантского аэродрома.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
       </section>
 
@@ -92,7 +108,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Юнтолово — масштаб новой застройки</h2>
+        <h2 id="yuntolovo-masshtab-novoy-zastroyki">Юнтолово — масштаб новой застройки</h2>
         <p>Экорайон «Юнтолово» — один из крупнейших жилищных проектов города: 2,2 млн кв. м жилья
           для порядка 70 тысяч человек на 427 гектарах, с прилегающей коммерческой застройкой. Для нас
           это поток заявок на монтаж инженерного оборудования, подачу материалов на этажи и разгрузку
@@ -100,13 +116,13 @@ export default function Page() {
           схему подъезда к конкретному корпусу нужно уточнять по адресу, а не по общему представлению
           о районе.</p>
 
-        <h2>Зона у Лахта Центра</h2>
+        <h2 id="zona-u-lahta-tsentra">Зона у Лахта Центра</h2>
         <p>Территория вокруг высотной доминанты продолжает застраиваться жилыми и коммерческими
           объектами. Сама башня прямых логистических ограничений для нас не создаёт, но плотность
           стройплощадок в округе означает, что подъездные пути временно делятся с другой техникой.
           Актуальную схему заезда уточняем по конкретному объекту перед выездом крана.</p>
 
-        <h2>Прибрежная низменность и намывные участки</h2>
+        <h2 id="pribrezhnaya-nizmennost-i-namyvnye-uchastki">Прибрежная низменность и намывные участки</h2>
         <p>Район выходит к Финскому заливу, часть его территории — низменная прибрежная зона, местами
           с намывным грунтом. Как и на Васильевском острове, несущая способность площадки под выносные
           опоры требует отдельной оценки: искусственное основание неоднородно по плотности сильнее, чем
@@ -116,14 +132,14 @@ export default function Page() {
           ещё не готова принять автокран на опоры, в парке есть гусеничная альтернатива —{" "}
           <Link href="/park/zoomlion-quy50/">Zoomlion QUY50</Link>.</p>
 
-        <h2>Комендантский аэродром — более старая застройка</h2>
+        <h2 id="komendantskiy-aerodrom-bolee-staraya-zastroyka">Комендантский аэродром — более старая застройка</h2>
         <p>Ближе к границе с Выборгским районом сохраняется ранняя жилая застройка на месте бывшего
           Комендантского аэродрома. Здесь задачи типовые для спальных кварталов: капитальный ремонт
           фасадов и кровель, монтаж инженерного оборудования, разгрузка при реконструкции. Проезды,
           как правило, свободнее, чем на активных стройплощадках Юнтолова, — и это тот редкий случай
           в городе, когда подъезд не приходится проверять отдельно.</p>
 
-        <h2>Цена работы в Приморском районе</h2>
+        <h2 id="tsena-raboty-v-primorskom-rayone">Цена работы в Приморском районе</h2>
         <p>Ставка по классу техники единая по городу — см. <Link href="/#price">прайс-лист</Link>.
           Для площадок в зоне активной застройки закладываем время на уточнение схемы подъезда,
           для прибрежных и намывных участков — на оценку точки установки. Подача считается
@@ -133,7 +149,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="faq-geo">
         <div className="section-head">
           <span className="eyebrow">Вопросы по району</span>
-          <h2>Что спрашивают про Приморский район</h2>
+          <h2 id="chto-sprashivayut-pro-primorskiy-rayon">Что спрашивают про Приморский район</h2>
         </div>
         <div className="faq measure">
           {faqs.map((f) => (

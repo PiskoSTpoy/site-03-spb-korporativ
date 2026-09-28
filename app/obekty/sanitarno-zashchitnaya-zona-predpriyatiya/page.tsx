@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W141, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -72,9 +73,20 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-16";
+const artLd = articleLd({ headline: "Кран в санитарно-защитной зоне: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "chem-eto-otlichaetsya-ot-promzony-i-ohrannyh-zon-setey", label: "Чем это отличается от промзоны и охранных зон сетей" },
+  { id: "pyat-klassov-opasnosti-i-chto-oni-znachat-dlya-ploschadki", label: "Пять классов опасности и что они значат для площадки" },
+  { id: "seryy-poyas-i-pochemu-tema-seychas-aktualna-dlya-peterburga", label: "«Серый пояс» и почему тема сейчас актуальна для Петербурга" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -93,6 +105,7 @@ export default function Page() {
             жильё и социальные объекты, пока зона не сокращена или не прекращена в установленном
             порядке. Ограничивает не собственник соседнего участка, а статус земли вокруг предприятия.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W141} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -141,7 +154,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Чем это отличается от промзоны и охранных зон сетей</h2>
+        <h2 id="chem-eto-otlichaetsya-ot-promzony-i-ohrannyh-zon-setey">Чем это отличается от промзоны и охранных зон сетей</h2>
         <p>
           На промзоне как типе объекта ограничение — пропускной режим действующего предприятия:
           у каждого завода он свой, и общего норматива на срок оформления нет в принципе, потому что
@@ -159,7 +172,7 @@ export default function Page() {
           сначала выясняем статус самой зоны на конкретном адресе.
         </p>
 
-        <h2>Пять классов опасности и что они значат для площадки</h2>
+        <h2 id="pyat-klassov-opasnosti-i-chto-oni-znachat-dlya-ploschadki">Пять классов опасности и что они значат для площадки</h2>
         <p>
           Санитарную классификацию задаёт СанПиН 2.2.1/2.1.1.1200-03 «Санитарно-защитные зоны
           и санитарная классификация предприятий, сооружений и иных объектов» — действующая редакция
@@ -177,7 +190,7 @@ export default function Page() {
           ограничения, а не заменяет собой утверждённый проект.
         </p>
 
-        <h2>«Серый пояс» и почему тема сейчас актуальна для Петербурга</h2>
+        <h2 id="seryy-poyas-i-pochemu-tema-seychas-aktualna-dlya-peterburga">«Серый пояс» и почему тема сейчас актуальна для Петербурга</h2>
         <p>
           Санитарно-защитная зона — не абстрактный норматив, а фактура, с которой в городе сталкивается
           каждый редевелопмент бывшей промышленной территории. Комитет по градостроительству

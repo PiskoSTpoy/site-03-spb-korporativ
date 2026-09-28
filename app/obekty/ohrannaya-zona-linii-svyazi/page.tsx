@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W140, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -58,9 +59,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-14";
+const artLd = articleLd({ headline: "Кран у линии связи: спецификация подачи в охранной зоне кабельной или воздушной линии", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-dvora-ili-stroyploschadki", label: "Почему это отдельный тип объекта, а не часть двора или стройплощадки" },
+  { id: "chto-reguliruet-soglasovanie-i-pochemu-v-gorode-net-edinoy-tsifry-v-metrah", label: "Что регулирует согласование и почему в городе нет единой цифры в метрах" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -81,6 +92,7 @@ export default function Page() {
             не допускаются — независимо от того, что происходит вокруг: обычный двор, промзона или
             территория под охраной КГИОП.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W140} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -129,7 +141,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это отдельный тип объекта, а не часть двора или стройплощадки</h2>
+        <h2 id="pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-dvora-ili-stroyploschadki">Почему это отдельный тип объекта, а не часть двора или стройплощадки</h2>
         <p>
           У большинства прежних типов объектов ограничение хотя бы отчасти видно на месте: завод —
           на <Link href="/obekty/promzona/">промзоне</Link>, орган охраны памятников — на{" "}
@@ -148,7 +160,7 @@ export default function Page() {
           отсутствие внешнего ориентира здесь особенность самой сети, а не повод её не проверять.
         </p>
 
-        <h2>Что регулирует согласование и почему в городе нет единой цифры в метрах</h2>
+        <h2 id="chto-reguliruet-soglasovanie-i-pochemu-v-gorode-net-edinoy-tsifry-v-metrah">Что регулирует согласование и почему в городе нет единой цифры в метрах</h2>
         <p>
           Действующая основа — постановление Правительства РФ от 09.06.1995 № 578 «Об утверждении Правил
           охраны линий и сооружений связи Российской Федерации». Правила прямо запрещают в границах

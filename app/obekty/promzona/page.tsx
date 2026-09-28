@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 const title = "Автокран на действующем производстве: спецификация подачи";
@@ -49,9 +50,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Автокран на действующем производстве: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-vylet-reshaet-ranshe-vesa", label: "Почему вылет решает раньше веса" },
+  { id: "sosedstvo-promzon-i-zhiloy-zastroyki-v-peterburge", label: "Соседство промзон и жилой застройки в Петербурге" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -78,6 +89,7 @@ export default function Page() {
             оборудование стоит в глубине цеха или площадки, а встать можно только там, где есть
             проезд и разрешено вставать.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -127,7 +139,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему вылет решает раньше веса</h2>
+        <h2 id="pochemu-vylet-reshaet-ranshe-vesa">Почему вылет решает раньше веса</h2>
         <p>
           Грузоподъёмность автокрана максимальна у основания стрелы и падает по мере увеличения вылета —
           это верно для любой машины и любого производителя. На промышленной площадке вылет обычно задан
@@ -142,7 +154,7 @@ export default function Page() {
           шестьдесят, разберёмся на месте».
         </p>
 
-        <h2>Соседство промзон и жилой застройки в Петербурге</h2>
+        <h2 id="sosedstvo-promzon-i-zhiloy-zastroyki-v-peterburge">Соседство промзон и жилой застройки в Петербурге</h2>
         <p>
           Особенность города: промышленные площадки и новая жилая застройка здесь перемешаны. В том же{" "}
           <Link href="/geo/moskovskiy/">Московском районе</Link> территории, освобождённые от производств, застраиваются жилыми комплексами,

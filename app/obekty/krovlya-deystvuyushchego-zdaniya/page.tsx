@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W145, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -74,9 +75,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-24";
+const artLd = articleLd({ headline: "Кран на крышу работающего бизнес-центра: спецификация подачи", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-tochka-ustanovki-vazhnee-klassa-krana", label: "Почему точка установки важнее класса крана" },
+  { id: "chem-eto-otlichaetsya-ot-stroyploschadki-i-promzony", label: "Чем это отличается от стройплощадки и промзоны" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -95,6 +106,7 @@ export default function Page() {
             над перекрытиями, под которыми размещены помещения, где могут находиться люди.
             Поэтому точку установки крана и траекторию груза выбирают раньше, чем класс машины.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W145} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -143,7 +155,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему точка установки важнее класса крана</h2>
+        <h2 id="pochemu-tochka-ustanovki-vazhnee-klassa-krana">Почему точка установки важнее класса крана</h2>
         <p>
           Когда кран стоит у фасада и опускает агрегат на край крыши, груз проходит над
           улицей или двором и лишь в конце оказывается над кровлей. Если точка опускания
@@ -155,7 +167,7 @@ export default function Page() {
           Выбор делаем по схеме здания, а не по массе агрегата.
         </p>
 
-        <h2>Чем это отличается от стройплощадки и промзоны</h2>
+        <h2 id="chem-eto-otlichaetsya-ot-stroyploschadki-i-promzony">Чем это отличается от стройплощадки и промзоны</h2>
         <p>
           На <Link href="/obekty/stroyploshchadka-do-vvoda/">стройплощадке до ввода</Link> в здании
           ещё нет арендаторов, и допуск ведёт генподрядчик. В <Link href="/obekty/promzona/">промзоне</Link> кран

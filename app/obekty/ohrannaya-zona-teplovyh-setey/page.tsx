@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W131, MIN_SHIFT_HOURS, PRICE, rub, shiftTotal } from "../../site-data";
 
 /*
@@ -85,9 +86,19 @@ const serviceLd = {
   },
 };
 
+const published = "2026-09-04";
+const artLd = articleLd({ headline: "Кран у теплотрассы: спецификация подачи в охранной зоне тепловых сетей", description, canonical, published });
+
+const toc = [
+  { id: "pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-dvora-ili-stroyploschadki", label: "Почему это отдельный тип объекта, а не часть двора или стройплощадки" },
+  { id: "pochemu-soglasovanie-delit-gorod-ne-na-odin-sektor-a-na-neskolko-setevyh-organizatsiy", label: "Почему согласование делит город не на один сектор, а на несколько сетевых организаций" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
@@ -107,6 +118,7 @@ export default function Page() {
             запрещены — независимо от того, что происходит на площадке вокруг: жилой двор, промзона
             или территория под охраной КГИОП.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W131} toc={toc} />
         </div>
         <PrintButton label="Распечатать спецификацию" />
       </section>
@@ -155,7 +167,7 @@ export default function Page() {
       </section>
 
       <section className="section wrap prose section--flush measure">
-        <h2>Почему это отдельный тип объекта, а не часть двора или стройплощадки</h2>
+        <h2 id="pochemu-eto-otdelnyy-tip-obekta-a-ne-chast-dvora-ili-stroyploschadki">Почему это отдельный тип объекта, а не часть двора или стройплощадки</h2>
         <p>
           У большинства прежних типов объектов ограничение видно на месте: завод — на{" "}
           <Link href="/obekty/promzona/">промзоне</Link>, орган охраны памятников — на{" "}
@@ -172,7 +184,7 @@ export default function Page() {
           трассы там моложе.
         </p>
 
-        <h2>Почему согласование делит город не на один сектор, а на несколько сетевых организаций</h2>
+        <h2 id="pochemu-soglasovanie-delit-gorod-ne-na-odin-sektor-a-na-neskolko-setevyh-organizatsiy">Почему согласование делит город не на один сектор, а на несколько сетевых организаций</h2>
         <p>
           Централизованное теплоснабжение Петербурга — не система одного оператора. Крупнейшая
           и самая заметная теплоснабжающая организация города — АО «ТЭК СПб» (до марта 2025 года

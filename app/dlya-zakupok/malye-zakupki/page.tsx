@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W85 } from "../../site-data";
 
 /*
@@ -61,9 +62,21 @@ const breadcrumbLd = {
   ],
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Малый объём закупки: когда кран заказывают без конкурентной процедуры", description, canonical, published });
+
+const toc = [
+  { id: "44-fz-zakupka-u-edinstvennogo-postavschika-do-600-000", label: "44-ФЗ: закупка у единственного поставщика до 600 000 ₽" },
+  { id: "223-fz-zakupka-vne-eis-do-100-000-500-000-dlya-krupnoy-vyruchki", label: "223-ФЗ: закупка вне ЕИС до 100 000 ₽ (500 000 ₽ для крупной выручки)" },
+  { id: "chto-menyaetsya-v-poryadke-i-chto-net", label: "Что меняется в порядке — и что нет" },
+  { id: "chto-eto-znachit-dlya-nashego-kp", label: "Что это значит для нашего КП" },
+  { id: "sources-heading", label: "Источники" },
+];
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="crumbs wrap" aria-label="Хлебные крошки">
@@ -81,6 +94,7 @@ export default function Page() {
             закупки у единственного поставщика — 600 000 ₽ на договор. Ниже — точные суммы по 44-ФЗ
             и 223-ФЗ и что это меняет в порядке оформления и в самом КП.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W85} toc={toc} />
         </div>
         <PrintButton label="Распечатать раздел про малые закупки" />
       </section>
@@ -88,7 +102,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="fz44">
         <div className="section-head">
           <span className="eyebrow">Раздел 01</span>
-          <h2>44-ФЗ: закупка у единственного поставщика до 600 000 ₽</h2>
+          <h2 id="44-fz-zakupka-u-edinstvennogo-postavschika-do-600-000">44-ФЗ: закупка у единственного поставщика до 600 000 ₽</h2>
           <p>Основание — п. 4 ч. 1 ст. 93 Федерального закона № 44-ФЗ. Работа, товар или услуга
             в пределах суммы ниже — без конкурса, без запроса котировок, без итогового протокола.</p>
         </div>
@@ -115,7 +129,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="fz223">
         <div className="section-head">
           <span className="eyebrow">Раздел 02</span>
-          <h2>223-ФЗ: закупка вне ЕИС до 100 000 ₽ (500 000 ₽ для крупной выручки)</h2>
+          <h2 id="223-fz-zakupka-vne-eis-do-100-000-500-000-dlya-krupnoy-vyruchki">223-ФЗ: закупка вне ЕИС до 100 000 ₽ (500 000 ₽ для крупной выручки)</h2>
           <p>Здесь логика другая: это не отдельный конкурентный способ с протоколом, а прямое
             исключение из обязанности вообще размещать сведения о закупке в единой информационной
             системе.</p>
@@ -140,7 +154,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="menyaetsya">
         <div className="section-head">
           <span className="eyebrow">Раздел 03</span>
-          <h2>Что меняется в порядке — и что нет</h2>
+          <h2 id="chto-menyaetsya-v-poryadke-i-chto-net">Что меняется в порядке — и что нет</h2>
         </div>
         <div className="dtable-scroll">
           <table className="dtable">
@@ -169,7 +183,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="praktika">
         <div className="section-head">
           <span className="eyebrow">Раздел 04</span>
-          <h2>Что это значит для нашего КП</h2>
+          <h2 id="chto-eto-znachit-dlya-nashego-kp">Что это значит для нашего КП</h2>
         </div>
         <p className="price-note">
           В заявке на разовую смену или короткий объект мы сразу указываем, что сумма укладывается

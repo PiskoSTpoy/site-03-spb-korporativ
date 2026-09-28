@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "../../components/PrintButton";
 import Sources from "../../components/Sources";
+import ArticleHead, { articleLd } from "../../components/ArticleHead";
 import { OG_IMAGE, SITE, FACT_CHECK_W86 } from "../../site-data";
 
 /*
@@ -82,9 +83,13 @@ const breadcrumbLd = {
   ],
 };
 
+const published = "2026-08-26";
+const artLd = articleLd({ headline: "Нужно больше или меньше смен крана, чем в контракте, — до 10% без новой закупки", description, canonical, published });
+
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(artLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="crumbs wrap" aria-label="Хлебные крошки">
@@ -104,6 +109,7 @@ export default function Page() {
             корректировка по соглашению сторон. Ниже — на каком основании, какой у этого лимит и что
             мы делаем в КП, когда заказчик просит больше или меньше машино-смен.
           </p>
+          <ArticleHead published={published} checked={FACT_CHECK_W86} toc={[]} />
         </div>
         <PrintButton label="Распечатать раздел об изменении объёма контракта" />
       </section>
@@ -111,7 +117,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="osnovanie">
         <div className="section-head">
           <span className="eyebrow">Раздел 01</span>
-          <h2>Основание: п. 1.1–1.2 ч. 1 ст. 95 44-ФЗ, а не форс-мажор и не нарушение</h2>
+          <h2 id="osnovanie-p-1-1-1-2-ch-1-st-95-44-fz-a-ne-fors-mazhor-i-ne-narushenie">Основание: п. 1.1–1.2 ч. 1 ст. 95 44-ФЗ, а не форс-мажор и не нарушение</h2>
           <p>Общее правило 44-ФЗ жёсткое: изменение существенных условий контракта при его исполнении
             не допускается. Из этого правила закон делает закрытый перечень исключений — два из них
             прямо касаются нашей услуги.</p>
@@ -143,7 +149,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="raschet">
         <div className="section-head">
           <span className="eyebrow">Раздел 02</span>
-          <h2>Как считается 10% и что происходит с ценой</h2>
+          <h2 id="kak-schitaetsya-10-i-chto-proishodit-s-tsenoy">Как считается 10% и что происходит с ценой</h2>
           <p>Цена единицы — то есть ставка машино-смены или часа из уже подписанного контракта — не
             пересматривается. Меняется только количество единиц, в пределах лимита.</p>
         </div>
@@ -171,7 +177,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="obespechenie">
         <div className="section-head">
           <span className="eyebrow">Раздел 03</span>
-          <h2>Как это связано с обеспечением контракта</h2>
+          <h2 id="kak-eto-svyazano-s-obespecheniem-kontrakta">Как это связано с обеспечением контракта</h2>
         </div>
         <div className="dtable-scroll">
           <table className="dtable">
@@ -196,7 +202,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="223fz">
         <div className="section-head">
           <span className="eyebrow">Раздел 04</span>
-          <h2>223-ФЗ: своей статьи 95 у закона нет</h2>
+          <h2 id="223-fz-svoey-stati-95-u-zakona-net">223-ФЗ: своей статьи 95 у закона нет</h2>
           <p>Оглавление 223-ФЗ прочитано целиком: закон переходит от способов закупки (ст. 3.1–3.6)
             сразу к информационному обеспечению (ст. 4) — отдельной статьи об изменении условий
             договора в нём нет.</p>
@@ -216,7 +222,7 @@ export default function Page() {
       <section className="section wrap section--flush" id="praktika">
         <div className="section-head">
           <span className="eyebrow">Раздел 05</span>
-          <h2>Что это значит для нашего КП</h2>
+          <h2 id="chto-eto-znachit-dlya-nashego-kp">Что это значит для нашего КП</h2>
         </div>
         <p className="price-note">
           В спецификации к договору мы сразу фиксируем цену за час и минимальную смену для выбранного
