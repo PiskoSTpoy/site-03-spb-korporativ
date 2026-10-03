@@ -206,7 +206,9 @@ export default function Page() {
           {rub(shiftTotal(light.rate))} без НДС; Zoomlion QUY50 класса {mid.cls} — {rub(mid.rate)} ×{" "}
           {MIN_SHIFT_HOURS} = {rub(shiftTotal(mid.rate))}. Своим ходом по дорогам QUY50 не ездит,
           поэтому его перевозка трейлером и монтаж считаются отдельно — условия на странице{" "}
-          <Link href="/park/zoomlion-quy50/">Zoomlion QUY50</Link>.
+          <Link href="/park/zoomlion-quy50/">Zoomlion QUY50</Link>. Тот же гусеничный принцип
+          решает похожую задачу на неукреплённом берегу малого причала — см.{" "}
+          <Link href="/obekty/prichal-vne-bolshogo-porta/">причал вне Большого порта</Link>.
         </p>
       </section>
 

@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "a92f853df0834ad0",
-      "lastmod": "2026-10-02T11:06:53+03:00"
+      "hash": "2f8db9419a254352",
+      "lastmod": "2026-10-03T06:46:09+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "a467141811cedc04",
-      "lastmod": "2026-10-02T11:06:53+03:00"
+      "hash": "f6d2c9efd52f6457",
+      "lastmod": "2026-10-03T06:46:09+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -286,16 +286,16 @@
       "lastmod": "2026-09-27T19:17:10+03:00"
     },
     "/obekty/slabye-grunty-i-torfyaniki/": {
-      "hash": "0a546f67eab7458b",
-      "lastmod": "2026-09-27T19:17:10+03:00"
+      "hash": "74cfb8fe17219f01",
+      "lastmod": "2026-10-03T06:46:09+03:00"
     },
     "/obekty/demontazh-i-snos-zdaniya/": {
       "hash": "39f22835e2f27387",
       "lastmod": "2026-09-28T06:35:56+03:00"
     },
     "/obekty/poberezhe-finskogo-zaliva-zimoy/": {
-      "hash": "04407c8c9b1074ef",
-      "lastmod": "2026-09-28T06:35:56+03:00"
+      "hash": "908949b8c9893a25",
+      "lastmod": "2026-10-03T06:46:09+03:00"
     },
     "/obekty/vplotnuyu-k-sosednemu-zdaniyu/": {
       "hash": "6bd0f719fc4ef7be",
@@ -338,8 +338,8 @@
       "lastmod": "2026-10-01T11:49:39+03:00"
     },
     "/obekty/montazh-tyazhelogo-oborudovaniya/": {
-      "hash": "afa363a477930a41",
-      "lastmod": "2026-10-02T11:10:54+03:00"
+      "hash": "b396c4627dcf1966",
+      "lastmod": "2026-10-03T06:46:09+03:00"
     },
     "/obekty/opasnyy-proizvodstvennyy-obekt/": {
       "hash": "b2f75b83574b246a",
@@ -348,6 +348,18 @@
     "/obekty/rabota-kranom-nochyu-i-v-vyhodnye/": {
       "hash": "de452669c177ff4c",
       "lastmod": "2026-10-02T11:10:54+03:00"
+    },
+    "/obekty/montazh-liftovogo-oborudovaniya/": {
+      "hash": "e7f09659920ad73e",
+      "lastmod": "2026-10-03T06:51:18+03:00"
+    },
+    "/obekty/prichal-vne-bolshogo-porta/": {
+      "hash": "af11e10b4d94de6c",
+      "lastmod": "2026-10-03T06:51:18+03:00"
+    },
+    "/obekty/veter-i-gololed/": {
+      "hash": "145e8eca6784f20e",
+      "lastmod": "2026-10-03T06:52:26+03:00"
     }
   }
 }
