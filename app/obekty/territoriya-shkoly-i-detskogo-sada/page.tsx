@@ -208,7 +208,7 @@ export default function Page() {
           или 223-ФЗ с закрывающими документами — порядок описан в разделе{" "}
           <Link href="/dlya-zakupok/">«Для закупок»</Link>. Соседние типы объектов со схожими
           ограничениями — <Link href="/obekty/krovlya-deystvuyushchego-zdaniya/">кровля действующего здания</Link>{" "}
-          и <Link href="/obekty/zhiloy-dvor-mnogokvartirnogo-doma/">жилой двор многоквартирного дома</Link>.
+          и <Link href="/obekty/zhiloy-dvor-mnogokvartirnogo-doma/">жилой двор многоквартирного дома</Link>; для действующей больницы нормы шума строже — см. <Link href="/obekty/territoriya-bolnitsy-i-polikliniki/">территорию больницы и поликлиники</Link>.
         </p>
       </section>
 

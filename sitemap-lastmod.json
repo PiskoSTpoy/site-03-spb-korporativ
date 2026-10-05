@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "2f8db9419a254352",
-      "lastmod": "2026-10-03T06:46:09+03:00"
+      "hash": "5aeeae6ce752a595",
+      "lastmod": "2026-10-04T06:21:36+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -34,8 +34,8 @@
       "lastmod": "2026-09-28T06:49:44+03:00"
     },
     "/documents/": {
-      "hash": "550bca2582de22ab",
-      "lastmod": "2026-09-25T11:40:31+03:00"
+      "hash": "c1e5bf056a98e066",
+      "lastmod": "2026-10-04T06:21:36+03:00"
     },
     "/faq/": {
       "hash": "ee8d831157fdde40",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "f6d2c9efd52f6457",
-      "lastmod": "2026-10-03T06:46:09+03:00"
+      "hash": "09608cc97086fea0",
+      "lastmod": "2026-10-04T06:21:36+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -258,8 +258,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/territoriya-shkoly-i-detskogo-sada/": {
-      "hash": "79fad2640ac47e58",
-      "lastmod": "2026-09-25T11:40:31+03:00"
+      "hash": "89e09687ba00a285",
+      "lastmod": "2026-10-04T06:21:36+03:00"
     },
     "/obekty/tramvaynye-puti-i-kontaktnaya-set/": {
       "hash": "fe695981df0d6fe8",
@@ -314,8 +314,8 @@
       "lastmod": "2026-09-29T12:57:22+03:00"
     },
     "/obekty/dva-krana-na-odnoy-ploshchadke/": {
-      "hash": "c25a6f37dd4ee88c",
-      "lastmod": "2026-09-30T12:07:42+03:00"
+      "hash": "5f00cfeae7c1bcf1",
+      "lastmod": "2026-10-04T06:21:36+03:00"
     },
     "/obekty/montazh-bashennogo-krana-avtokranom/": {
       "hash": "cd9898e492b088d0",
@@ -360,6 +360,18 @@
     "/obekty/veter-i-gololed/": {
       "hash": "145e8eca6784f20e",
       "lastmod": "2026-10-03T06:52:26+03:00"
+    },
+    "/obekty/neskolko-podemov-v-odnu-smenu/": {
+      "hash": "f185b033006c004b",
+      "lastmod": "2026-10-05T11:36:01+03:00"
+    },
+    "/obekty/spetsrazreshenie-na-proezd-krana/": {
+      "hash": "f7017e7b730a8fe6",
+      "lastmod": "2026-10-05T11:36:01+03:00"
+    },
+    "/obekty/territoriya-bolnitsy-i-polikliniki/": {
+      "hash": "02152f2b2122e023",
+      "lastmod": "2026-10-05T11:36:01+03:00"
     }
   }
 }
