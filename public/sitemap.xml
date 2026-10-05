@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kranneva.ru/</loc><lastmod>2026-10-04T06:21:36+03:00</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://kranneva.ru/</loc><lastmod>2026-10-05T11:42:14+03:00</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://kranneva.ru/dlya-zakupok/</loc><lastmod>2026-09-25T11:40:31+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://kranneva.ru/dlya-zakupok/izmenenie-obema-i-tseny-kontrakta/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/dlya-zakupok/malye-zakupki/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -27,7 +27,7 @@
   <url><loc>https://kranneva.ru/geo/vasileostrovskiy/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/geo/vyborgskiy/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/kontakty/</loc><lastmod>2026-09-25T11:40:31+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kranneva.ru/obekty/</loc><lastmod>2026-10-04T06:21:36+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kranneva.ru/obekty/</loc><lastmod>2026-10-05T11:42:14+03:00</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://kranneva.ru/obekty/demontazh-i-snos-zdaniya/</loc><lastmod>2026-09-28T06:35:56+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/deystvuyushchaya-azs/</loc><lastmod>2026-09-25T11:40:31+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/deystvuyushchiy-torgovyy-tsentr/</loc><lastmod>2026-09-27T19:17:10+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -60,6 +60,8 @@
   <url><loc>https://kranneva.ru/obekty/poberezhe-finskogo-zaliva-zimoy/</loc><lastmod>2026-10-03T06:46:09+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/podem-lyudey-v-lyulke-kranom/</loc><lastmod>2026-10-01T11:50:04+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/port-i-terminal/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kranneva.ru/obekty/poryadok-podema-gruza/</loc><lastmod>2026-10-05T11:42:14+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kranneva.ru/obekty/pozharnyy-proezd-i-opory-krana/</loc><lastmod>2026-10-05T11:42:40+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/priaerodromnaya-territoriya/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/prichal-vne-bolshogo-porta/</loc><lastmod>2026-10-03T06:51:18+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/pridorozhnaya-polosa-avtodorogi/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -75,6 +77,7 @@
   <url><loc>https://kranneva.ru/obekty/territoriya-aerodroma/</loc><lastmod>2026-09-28T06:49:44+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/territoriya-bolnitsy-i-polikliniki/</loc><lastmod>2026-10-05T11:36:01+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/territoriya-shkoly-i-detskogo-sada/</loc><lastmod>2026-10-04T06:21:36+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kranneva.ru/obekty/toplivo-i-ekipazh-v-stavke/</loc><lastmod>2026-10-05T11:42:55+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/tramvaynye-puti-i-kontaktnaya-set/</loc><lastmod>2026-09-25T11:40:31+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/veter-i-gololed/</loc><lastmod>2026-10-03T06:52:26+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://kranneva.ru/obekty/vplotnuyu-k-sosednemu-zdaniyu/</loc><lastmod>2026-09-28T06:35:56+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
