@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "530b956f0134328a",
-      "lastmod": "2026-10-08T11:04:11+03:00"
+      "hash": "217e917edb07f40e",
+      "lastmod": "2026-10-09T14:27:39+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "c38102ad720b9ee2",
-      "lastmod": "2026-10-08T11:04:11+03:00"
+      "hash": "ab15f1bd3968df75",
+      "lastmod": "2026-10-09T14:27:39+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -314,8 +314,8 @@
       "lastmod": "2026-09-29T12:57:22+03:00"
     },
     "/obekty/dva-krana-na-odnoy-ploshchadke/": {
-      "hash": "5f00cfeae7c1bcf1",
-      "lastmod": "2026-10-04T06:21:36+03:00"
+      "hash": "f668233b97d44d15",
+      "lastmod": "2026-10-09T14:27:39+03:00"
     },
     "/obekty/montazh-bashennogo-krana-avtokranom/": {
       "hash": "cd9898e492b088d0",
@@ -412,6 +412,18 @@
     "/obekty/podacha-gruza-v-proem-perekrytiya/": {
       "hash": "0fae295eceafc043",
       "lastmod": "2026-10-08T11:04:11+03:00"
+    },
+    "/obekty/dvizhenie-krana-s-gruzom-na-kryuke/": {
+      "hash": "fc636efe891c100e",
+      "lastmod": "2026-10-09T14:27:39+03:00"
+    },
+    "/obekty/montazh-vitrazhey-i-stenovyh-paneley/": {
+      "hash": "4e7b5160b2409a16",
+      "lastmod": "2026-10-09T14:27:39+03:00"
+    },
+    "/obekty/rasstoyanie-mezhdu-kranami-5-metrov/": {
+      "hash": "7d97aa9c29663779",
+      "lastmod": "2026-10-09T14:28:03+03:00"
     }
   }
 }
