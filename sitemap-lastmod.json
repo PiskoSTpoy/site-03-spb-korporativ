@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "861fc97ca594ddd8",
-      "lastmod": "2026-10-10T06:48:13+03:00"
+      "hash": "baf68bfaa88d53c6",
+      "lastmod": "2026-10-12T00:04:11+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "762732a3cb6c4178",
-      "lastmod": "2026-10-10T06:48:13+03:00"
+      "hash": "dfff8ffc87f582de",
+      "lastmod": "2026-10-12T00:04:11+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -436,6 +436,18 @@
     "/obekty/razgruzka-avtomashiny-kranom/": {
       "hash": "78efb1df138c9e18",
       "lastmod": "2026-10-10T06:49:56+03:00"
+    },
+    "/obekty/signalshchik-pri-plohom-obzore-iz-kabiny/": {
+      "hash": "48083992bc50ef9b",
+      "lastmod": "2026-10-12T00:05:05+03:00"
+    },
+    "/obekty/stropalshchik-zakazchika-ili-arendodatelya/": {
+      "hash": "726d6a8971c2e43a",
+      "lastmod": "2026-10-12T00:05:05+03:00"
+    },
+    "/obekty/tehnicheskoe-osvidetelstvovanie-krana-v-pasporte/": {
+      "hash": "5883f56c9883dd5d",
+      "lastmod": "2026-10-12T00:05:05+03:00"
     }
   }
 }
