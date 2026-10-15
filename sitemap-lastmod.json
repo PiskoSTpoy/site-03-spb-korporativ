@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "baf68bfaa88d53c6",
-      "lastmod": "2026-10-12T00:04:11+03:00"
+      "hash": "2097693efedc8ac7",
+      "lastmod": "2026-10-15T13:30:31+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "dfff8ffc87f582de",
-      "lastmod": "2026-10-12T00:04:11+03:00"
+      "hash": "8dca5115d460c6e9",
+      "lastmod": "2026-10-15T13:30:31+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -448,6 +448,30 @@
     "/obekty/tehnicheskoe-osvidetelstvovanie-krana-v-pasporte/": {
       "hash": "5883f56c9883dd5d",
       "lastmod": "2026-10-12T00:05:05+03:00"
+    },
+    "/obekty/smena-uchastka-i-instruktazh-po-znakam/": {
+      "hash": "b95bdf69c73a81c1",
+      "lastmod": "2026-10-14T06:18:17+03:00"
+    },
+    "/obekty/stropy-i-traversy-zakazchika-ili-arendodatelya/": {
+      "hash": "b0e1b43b71f05a52",
+      "lastmod": "2026-10-14T06:18:42+03:00"
+    },
+    "/obekty/vzveshivanie-gruza-po-pokazaniyam-krana/": {
+      "hash": "1cec03e0310ed871",
+      "lastmod": "2026-10-14T06:18:17+03:00"
+    },
+    "/obekty/avariynaya-instruktsiya-dlya-raboty-krana/": {
+      "hash": "530e85e855a67e85",
+      "lastmod": "2026-10-15T13:30:31+03:00"
+    },
+    "/obekty/kran-s-greyferom-ili-kryukom/": {
+      "hash": "816ac6bea1ea9df9",
+      "lastmod": "2026-10-15T13:30:31+03:00"
+    },
+    "/obekty/nochnaya-stoyanka-krana-vo-dvore/": {
+      "hash": "6d9eceed1678e2ba",
+      "lastmod": "2026-10-15T13:30:31+03:00"
     }
   }
 }
