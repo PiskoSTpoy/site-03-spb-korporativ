@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "c74307a3ed49dd2e",
-      "lastmod": "2026-10-18T19:18:24+03:00"
+      "hash": "95b497cbca5054d7",
+      "lastmod": "2026-10-19T11:15:40+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "9b6b34b5372056c2",
-      "lastmod": "2026-10-18T19:18:24+03:00"
+      "hash": "ef0917f1f5cb81eb",
+      "lastmod": "2026-10-19T11:15:40+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -496,6 +496,18 @@
     "/obekty/zameshchenie-otvetstvennogo-inzhenera-v-otpusk-i-prazdnik/": {
       "hash": "6986a30bb1a4271c",
       "lastmod": "2026-10-18T19:18:24+03:00"
+    },
+    "/obekty/korroziya-i-vlazhnyy-klimat-pri-osmotre-krana/": {
+      "hash": "dcde04e0f99d2324",
+      "lastmod": "2026-10-19T11:16:08+03:00"
+    },
+    "/obekty/ocenka-uzlov-krana-po-ru-ili-po-fnp/": {
+      "hash": "d31e72c248467d74",
+      "lastmod": "2026-10-19T11:16:08+03:00"
+    },
+    "/obekty/zamena-kanata-na-krane-pered-podachey/": {
+      "hash": "995c678574092309",
+      "lastmod": "2026-10-19T11:15:40+03:00"
     }
   }
 }
