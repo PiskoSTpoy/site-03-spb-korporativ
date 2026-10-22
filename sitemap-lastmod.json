@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "95b497cbca5054d7",
-      "lastmod": "2026-10-19T11:15:40+03:00"
+      "hash": "8085cbb1d5e4cbc9",
+      "lastmod": "2026-10-22T11:17:22+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "ef0917f1f5cb81eb",
-      "lastmod": "2026-10-19T11:15:40+03:00"
+      "hash": "bcff1ee31e0b07f3",
+      "lastmod": "2026-10-22T11:17:22+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -508,6 +508,18 @@
     "/obekty/zamena-kanata-na-krane-pered-podachey/": {
       "hash": "995c678574092309",
       "lastmod": "2026-10-19T11:15:40+03:00"
+    },
+    "/obekty/brakovka-stropov-kanatnyy-tsepnoy-ili-tekstilnyy/": {
+      "hash": "7c341a2df4b46c8a",
+      "lastmod": "2026-10-22T11:17:52+03:00"
+    },
+    "/obekty/proverka-ogranichitelya-gruzopodemnosti-krana/": {
+      "hash": "b296a9c46006c909",
+      "lastmod": "2026-10-22T11:17:22+03:00"
+    },
+    "/obekty/ukazatel-opasnogo-priblizheniya-k-lep-i-maket/": {
+      "hash": "51cbdfc02e78d15e",
+      "lastmod": "2026-10-22T11:17:52+03:00"
     }
   }
 }
