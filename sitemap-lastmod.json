@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "8085cbb1d5e4cbc9",
-      "lastmod": "2026-10-22T11:17:22+03:00"
+      "hash": "41c04ab6b5a71376",
+      "lastmod": "2026-10-23T06:19:57+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "bcff1ee31e0b07f3",
-      "lastmod": "2026-10-22T11:17:22+03:00"
+      "hash": "82651588f10cc0ac",
+      "lastmod": "2026-10-23T06:19:57+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -520,6 +520,18 @@
     "/obekty/ukazatel-opasnogo-priblizheniya-k-lep-i-maket/": {
       "hash": "51cbdfc02e78d15e",
       "lastmod": "2026-10-22T11:17:52+03:00"
+    },
+    "/obekty/brakovka-gruzovogo-kanata-krana-po-obryvam-i-iznosu/": {
+      "hash": "d595127683fa5412",
+      "lastmod": "2026-10-23T06:20:28+03:00"
+    },
+    "/obekty/kogda-kran-ne-dopuskayut-v-rabotu-po-p-251/": {
+      "hash": "b2c0d270c3562bc7",
+      "lastmod": "2026-10-23T06:20:45+03:00"
+    },
+    "/obekty/razvodka-mostov-i-okno-podachi-krana-v-spb/": {
+      "hash": "68f922249993680d",
+      "lastmod": "2026-10-23T06:20:28+03:00"
     }
   }
 }
