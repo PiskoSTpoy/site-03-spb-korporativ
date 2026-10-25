@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "41c04ab6b5a71376",
-      "lastmod": "2026-10-23T06:19:57+03:00"
+      "hash": "33f932a904ac1f0b",
+      "lastmod": "2026-10-25T16:15:57+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "82651588f10cc0ac",
-      "lastmod": "2026-10-23T06:19:57+03:00"
+      "hash": "1eb59bd5ea41cd7d",
+      "lastmod": "2026-10-25T16:15:57+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -532,6 +532,18 @@
     "/obekty/razvodka-mostov-i-okno-podachi-krana-v-spb/": {
       "hash": "68f922249993680d",
       "lastmod": "2026-10-23T06:20:28+03:00"
+    },
+    "/obekty/ispytaniya-gruzozahvatnyh-prisposobleniy-traversa-strop-greyfer/": {
+      "hash": "4deeb44a13b51d1a",
+      "lastmod": "2026-10-25T16:16:40+03:00"
+    },
+    "/obekty/ispytaniya-krana-na-gruzovuyu-ustoychivost/": {
+      "hash": "efd1eb9f89d15490",
+      "lastmod": "2026-10-25T16:16:40+03:00"
+    },
+    "/obekty/komplekt-ispytatelnyh-gruzov-i-smennye-organy-krana/": {
+      "hash": "9fcbf19ab64f3c06",
+      "lastmod": "2026-10-25T16:15:57+03:00"
     }
   }
 }
