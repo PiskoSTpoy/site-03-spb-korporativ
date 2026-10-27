@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "2fbb98c63eb8cc31",
-      "lastmod": "2026-10-26T11:14:36+03:00"
+      "hash": "a118c4076f0c60c0",
+      "lastmod": "2026-10-27T15:00:54+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "8b3d7b7a5a6be1de",
-      "lastmod": "2026-10-26T11:14:36+03:00"
+      "hash": "a3549b35b216ed48",
+      "lastmod": "2026-10-27T15:00:54+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -556,6 +556,18 @@
     "/obekty/vneocherednaya-proverka-relsovogo-puta-krana-posle-livnya/": {
       "hash": "5d991a339c23a6da",
       "lastmod": "2026-10-26T11:15:28+03:00"
+    },
+    "/obekty/gotovnost-relsovogo-puta-krana-akt-tupikovye-upory/": {
+      "hash": "2279eb50917f961a",
+      "lastmod": "2026-10-27T15:00:54+03:00"
+    },
+    "/obekty/peresechenie-relsovogo-puta-krana-s-zheleznoy-dorogoy/": {
+      "hash": "edaa9356d25ca1fa",
+      "lastmod": "2026-10-27T15:01:27+03:00"
+    },
+    "/obekty/stalnye-tsepi-krana-sertifikat-zamena-srashchivanie/": {
+      "hash": "c9ccde8fc8abbf78",
+      "lastmod": "2026-10-27T15:00:54+03:00"
     }
   }
 }
