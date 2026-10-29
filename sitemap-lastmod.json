@@ -2,8 +2,8 @@
   "_comment": "lastmod страниц по отпечатку содержимого. Ведёт scripts/emit-sitemap.mjs — руками не править, из репозитория не удалять. Волна 126: манифест пересеян. Прежние значения были стёрты сборкой этой же волны (отпечаток учитывал class/style, и перевод inline-стилей в классы объявил правкой все 45 страниц). Отпечаток исправлен — оформительские атрибуты из него убраны, — а хеши здесь пересчитаны по СОДЕРЖИМОМУ ДО этой волны. Дата 2026-08-26T05:51:21+03:00 — не выдумана: это время последней записи content-plan.md, то есть момент завершения предыдущей (содержательной) волны.",
   "pages": {
     "/": {
-      "hash": "a118c4076f0c60c0",
-      "lastmod": "2026-10-27T15:00:54+03:00"
+      "hash": "5ac12d652f402071",
+      "lastmod": "2026-10-29T08:46:43+03:00"
     },
     "/dlya-zakupok/": {
       "hash": "2d09bdb5f9656f36",
@@ -110,8 +110,8 @@
       "lastmod": "2026-09-25T11:40:31+03:00"
     },
     "/obekty/": {
-      "hash": "a3549b35b216ed48",
-      "lastmod": "2026-10-27T15:00:54+03:00"
+      "hash": "c1043abf9dc938a2",
+      "lastmod": "2026-10-29T08:46:43+03:00"
     },
     "/obekty/namyvnaya-territoriya/": {
       "hash": "d510d452ce170726",
@@ -568,6 +568,30 @@
     "/obekty/stalnye-tsepi-krana-sertifikat-zamena-srashchivanie/": {
       "hash": "c9ccde8fc8abbf78",
       "lastmod": "2026-10-27T15:00:54+03:00"
+    },
+    "/obekty/parametry-regiona-v-pasporte-krana-dlya-peterburga/": {
+      "hash": "136cd7472b443f74",
+      "lastmod": "2026-10-28T13:34:49+03:00"
+    },
+    "/obekty/raschet-stropa-ugol-mezhdu-vetvyami-i-skhemy-strovki/": {
+      "hash": "9f18b9d311bf2bb6",
+      "lastmod": "2026-10-28T13:35:34+03:00"
+    },
+    "/obekty/tara-krana-razgruzka-na-vesu-vibrator-melkoshtuchnye-gruzy/": {
+      "hash": "917ed3f27a4355f3",
+      "lastmod": "2026-10-28T13:35:34+03:00"
+    },
+    "/obekty/avariynaya-instruktsiya-krana-chto-v-nee-vhodit/": {
+      "hash": "ab91260c37a07b36",
+      "lastmod": "2026-10-29T08:47:31+03:00"
+    },
+    "/obekty/registratsiya-opo-i-proizvodstvennyy-kontrol-pri-arende-krana/": {
+      "hash": "9d5a6553ca2b7c97",
+      "lastmod": "2026-10-29T08:47:31+03:00"
+    },
+    "/obekty/tehosvidetelstvovanie-krana-i-podemnika-chto-proveryayut/": {
+      "hash": "c73a282630679eb2",
+      "lastmod": "2026-10-29T08:47:09+03:00"
     }
   }
 }
